@@ -1,63 +1,62 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 
-import logo from '../../assets/logo.webp';
+import logo from '../../assets/logo_no_sfondo.png';
 import menu_icon from '../../assets/menu_icon.png';
+import profile_icon from '../../assets/profile_icon.webp';
 
-import { Link } from 'react-router-dom';
-
-import { Link as ScrollLink } from 'react-scroll';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(null);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleDropdownToggle = (index) => {
-    const handleScroll = (event, id) => {
-      event.preventDefault();
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
-
-
-    if (window.innerWidth <= 900) {
-      // For mobile, toggle the dropdown on click
-      setMobileDropdownOpen(mobileDropdownOpen === index ? null : index);
-    } else {
-      // For desktop, toggle the dropdown on hover
-      setDropdownOpen(dropdownOpen === index ? null : index);
-    }
-  };
+  const navigate = useNavigate();
 
   const handleMenuClick = () => {
-    if(window.innerWidth <= 900) setIsOpen(!isOpen);
+    if (window.innerWidth <= 900) setIsOpen(!isOpen);
   };
+
+  const handleGoToSignup = () => {
+    navigate('/autenticazione', { state: { activeTab: "signup" } });
+    setIsOpen(false);
+  };
+
+  const handleGoToLogin = () => {
+    navigate('/autenticazione', { state: { activeTab: "login" } });
+    setIsOpen(false);
+  };
+
+  // Controlla se c'è un cookie che indica l'autenticazione
+  useEffect(() => {
+    const checkAuth = () => {
+      // Sostituisci 'token' con il nome effettivo del tuo cookie di autenticazione
+      const cookies = document.cookie;
+      const hasAuthCookie = cookies.includes('username='); 
+      setIsAuthenticated(hasAuthCookie);
+    };
+
+    checkAuth();
+
+    // Facoltativo: aggiorna lo stato quando i cookie cambiano
+    const cookieObserver = setInterval(checkAuth, 5000); // controlla ogni 5 secondi
+
+    return () => clearInterval(cookieObserver);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       setSticky(window.scrollY > 100);
     };
 
-    window.addEventListener('scroll', handleScroll);
-
     const handleResize = () => {
-      setWidth(window.innerWidth);
-      if (window.scrollY > 100) {
-        setSticky(true);
-      } else {
-        setSticky(false);
-      }
       if (window.innerWidth > 900) {
         setIsOpen(false);
-        setMobileDropdownOpen(null);
       }
     };
 
+    window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -69,45 +68,39 @@ const Navbar = () => {
   return (
     <>
       <nav className={`container ${sticky && !isOpen ? 'dark-nav' : ''}`}>
-        <ScrollLink to='carousel' smooth={true} offset={-250} duration={500}>
-          <img className={isOpen && width <= 900 ? 'logo2' : 'logo'} src={logo} alt="Logo" />
-        </ScrollLink>
-        <img src={menu_icon} alt="Menu Icon" className='menu_icon' onClick={handleMenuClick}/>
-        <div className={`menu ${isOpen ? 'open' : ''}`}>
-        <span><ScrollLink to='carousel' smooth={true} offset={-250} duration={500} className="menu-link">Home</ScrollLink></span>
-        <span><Link to="/Polo_universitario_128_eCampus" className="menu-link">eCampus</Link></span>
-        <span><Link to="/TFA" className="menu-link">TFA</Link></span>
-        <span><Link to="/Scuola Moscati" className="menu-link">Scuola Moscati<br/>InfoPoint</Link></span>
-        <span><Link to="/News" className="menu-link">News</Link></span>
-          <span className="dropdown-navbar" onMouseEnter={() => window.innerWidth > 900 && handleDropdownToggle(1)} onMouseLeave={() => window.innerWidth > 900 && handleDropdownToggle(null)} onClick={() => window.innerWidth <= 900 && handleDropdownToggle(1)}>
-            <a className="menu-link">La Scuola</a>
-            <div className={`dropdown-menu ${dropdownOpen === 1 || mobileDropdownOpen === 1 ? 'open' : ''}`}>
-            <Link to='/#ChiSiamo' className="menu-link" onClick={handleMenuClick}>Chi Siamo</Link>
-            <Link to="/#Maps" className="menu-link" onClick={handleMenuClick}>Dove Ci Troviamo</Link>
-            <Link to="/#Testimonials" className="menu-link" onClick={handleMenuClick}>I Feedback</Link>
-            </div>
-          </span>
-          <span>
-          <ScrollLink to='contact' smooth={true} offset={-250} duration={500}>
-            <button className='btn' onClick={handleMenuClick}>Contattaci</button>
-          </ScrollLink>
-          </span>
+        <div className="navbar-left">
+          <Link to="/">
+            <img className="logo" src={logo} alt="Logo" />
+          </Link>
+        </div>
+
+        <img
+          src={menu_icon}
+          alt="Menu Icon"
+          className="menu_icon"
+          onClick={handleMenuClick}
+        />
+
+        <div className={`navbar-right ${isOpen ? 'open' : ''}`}>
+          {!isAuthenticated ? (
+            <>
+              <button className="menu-link" onClick={handleGoToSignup}>
+                Registrati
+              </button>
+              <button className="menu-link" onClick={handleGoToLogin}>
+                Accedi
+              </button>
+            </>
+          ) : null}
+          <Link to="/profile/" onClick={handleMenuClick}>
+            <img src={profile_icon} alt="Profilo" className="profile-icon" />
+          </Link>
         </div>
       </nav>
+
       {isOpen && <div className="backdrop" onClick={() => setIsOpen(false)}></div>}
     </>
   );
 };
 
 export default Navbar;
-
-
-/**
-          <span className="dropdown-navbar" onMouseEnter={() => window.innerWidth > 900 && handleDropdownToggle(2)} onMouseLeave={() => window.innerWidth > 900 && handleDropdownToggle(null)} onClick={() => window.innerWidth <= 900 && handleDropdownToggle(2)}>
-            <a href="#" className="menu-link">Services 2</a>
-            <div className={`dropdown-menu ${dropdownOpen === 2 || mobileDropdownOpen === 2 ? 'open' : ''}`}>
-              <a href="/services/3" className="menu-link">Service 3</a>
-              <a href="/services/4" className="menu-link">Service 4</a>
-            </div>
-          </span>
- */
