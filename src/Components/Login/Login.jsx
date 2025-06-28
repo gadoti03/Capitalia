@@ -1,6 +1,8 @@
 import React from 'react';
 import './Login.css';
 
+const apiDbUrl = import.meta.env.VITE_API_DB_URL;
+
 export default function Login() {
   return (
     <div className="login-container">
