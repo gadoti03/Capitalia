@@ -1,11 +1,22 @@
-import React, { useState } from "react";
-import "./Autenticazione.css"; // Stile comune
+import React, { useState, useEffect } from "react";
+import "./Autenticazione.css";
 
 import Registrazione from "../../Components/Registrazione/Registrazione";
 import Login from "../../Components/Login/Login";
 
+import { useLocation } from "react-router-dom";
+
 export default function AuthPage() {
+  const location = useLocation();
+  
+  // Inizializza activeTab in base allo state ricevuto
   const [activeTab, setActiveTab] = useState("signup");
+
+  useEffect(() => {
+    if (location.state?.activeTab === "login" || location.state?.activeTab === "signup") {
+      setActiveTab(location.state.activeTab);
+    }
+  }, [location.state]);
 
   return (
     <div className="signup-container">
@@ -31,7 +42,11 @@ export default function AuthPage() {
         </div>
 
         {/* Render dinamico del contenuto */}
-        {activeTab === "signup" ? <Registrazione setActiveTab={setActiveTab} /> : <Login />}
+        {activeTab === "signup" ? (
+          <Registrazione setActiveTab={setActiveTab} />
+        ) : (
+          <Login />
+        )}
       </div>
     </div>
   );
