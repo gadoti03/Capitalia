@@ -157,6 +157,42 @@
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "",
       "biografia": ""
+    },
+    {
+      "id": "5953",
+      "username": "Paperino",
+      "nome": "pappa",
+      "cognome": "caccca",
+      "email": "acsas@gmail.com",
+      "password": "AFIUBAFNIJNCAkjbaciubsacd23",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": ""
+    },
+    {
+      "id": "0dbe",
+      "username": "fragabbani",
+      "nome": "Francesco",
+      "cognome": "Gabbani",
+      "email": "fragabbani@gmail.com",
+      "password": "Paperino@03",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": ""
+    },
+    {
+      "id": "8159",
+      "username": "LNANKLNA",
+      "nome": "LONLONI",
+      "cognome": "LONLONLO",
+      "email": "NLON@GMAIL.COM",
+      "password": "A13hjmmmmmmmmmmmm",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": ""
     }
   ],
   "servizi": [

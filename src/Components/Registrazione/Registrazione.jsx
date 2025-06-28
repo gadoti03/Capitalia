@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
 import "./Registrazione.css"; 
-const apiDbUrl = import.meta.env.VITE_API_DB_URL
+
+const apiDbUrl = import.meta.env.VITE_API_DB_URL;
 
 export default function Registrazione({ setActiveTab }) {
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     username: '',
     nome: '',
     cognome: '',
@@ -12,19 +12,26 @@ export default function Registrazione({ setActiveTab }) {
     password: ''
   });
 
+  const [errore, setErrore] = useState('');
+  const [successo, setSuccesso] = useState('');
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrore('');
+    setSuccesso('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrore('');
+    setSuccesso('');
 
     try {
       // Controllo se username già esiste
       const res = await fetch(`${apiDbUrl}/profili?username=${formData.username}`);
       const userExists = await res.json();
       if (userExists.length > 0) {
-        alert("Username già esistente!");
+        setErrore("Username già esistente!");
         return;
       }
 
@@ -32,7 +39,7 @@ export default function Registrazione({ setActiveTab }) {
       const resEmail = await fetch(`${apiDbUrl}/profili?email=${formData.email}`);
       const emailExists = await resEmail.json();
       if (emailExists.length > 0) {
-        alert("Email già registrata!");
+        setErrore("Email già registrata!");
         return;
       }
 
@@ -52,14 +59,15 @@ export default function Registrazione({ setActiveTab }) {
       });
 
       if (response.ok) {
-        alert("Registrazione completata!");
-        setActiveTab("login"); // Passa alla schermata di login
+        setSuccesso("Registrazione completata!");
+        setTimeout(() => setActiveTab("login"), 1500); // Passa al login dopo 1.5s
       } else {
-        alert("Errore durante la registrazione.");
+        setErrore("Errore durante la registrazione.");
       }
 
     } catch (error) {
       console.error("Errore:", error);
+      setErrore("Errore nella connessione al server.");
     }
   };
 
@@ -137,6 +145,9 @@ export default function Registrazione({ setActiveTab }) {
             title="Almeno 8 caratteri, con almeno una maiuscola, una minuscola e un numero. Max 32 caratteri"
           />
         </div>
+
+        {errore && <div className="signup-error">{errore}</div>}
+        {successo && <div className="signup-success">{successo}</div>}
 
         <button type="submit" className="signup-button">Registrati</button>
       </form>
