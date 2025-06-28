@@ -1,157 +1,103 @@
-nav {
-  width: 100%; /* Larghezza del 100% della finestra del browser */
-  color: #fff; /* Testo di colore bianco */
-  padding: 4px 0; /* Spaziatura interna sopra e sotto di 4 pixel, 0 pixel a sinistra e a destra */
-  position: fixed; /* Posizionamento fisso: l'elemento rimane fisso rispetto alla finestra del browser */
-  top: 0; /* Allinea l'elemento al bordo superiore della finestra */
-  left: 0; /* Allinea l'elemento al bordo sinistro della finestra */
-  display: flex; /* Utilizza il modello di layout flexbox */
-  align-items: center; /* Centra verticalmente gli elementi figli all'interno del contenitore */
-  justify-content: space-between; /* Distribuisce gli elementi figli con spazio uguale tra di loro */
-  z-index: 100000; /* Posiziona l'elemento sopra altri elementi con un valore di z-index inferiore */
-}
-
-.dark-nav{
-  background-color: rgba(33, 46, 160, 1);
-  transition: background-color 0.3s ease, opacity 0.3s ease; /* Transizione fluida */}
-
-.logo {
-    height: 70px;
-}
-
-.logo2{
-  height: 70px;
-  visibility: hidden;
-}
-
-.menu_icon{
-  display: none;
-  z-index: 1000;
-}
-
-.menu {
+/* Contenitore navbar */
+nav.container {
   display: flex;
-  gap: 60px;
-}
-
-.menu-link {
-  color: #fff;
-  text-decoration: none;
-  padding: 15px;
-}
-
-.menu-link span{
-}
-
-.dropdown-navbar {
-  position: relative; /*necessario per collocare .dropdown-menu */
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 200%;
-  width: 200px;
-  background: #ffffff;
-  border-radius: 5px;
-  overflow: hidden;
-  z-index: 1001; /* Ensure the dropdown menu appears above other elements */
-
-}
-
-.dropdown-menu a {
-  color: black;
-  font-weight: lighter;
-  padding: 1rem;
-
-}
-
-.dropdown-menu a:hover {
-  background-color: #ADD8E6;
-}
-
-.dropdown-menu.open {
-  display: block;
-}
-
-.dropdown-menu .menu-link {
-  display: block;
-}
-
-.backdrop {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  top: 0;
+  z-index: 100;
+  box-sizing: border-box;
 }
 
-@media (max-width: 1100px) {
-  .menu {
-    gap: 25px;
-  }
-  .dropdown-menu {
-    width: 150px;
-  }
+.dark-nav {
+  background-color: #222;
+  transition: background-color 0.3s ease;
 }
 
+/* Sinistra: logo */
+.navbar-left img.logo {
+  width: 140px; /* aumentato da 120px */
+  height: auto;
+  cursor: pointer;
+}
 
-@media (max-width: 900px) {
-  .menu_icon{
+/* Icona menu hamburger */
+.menu_icon {
+  display: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+/* Destra: link e icona profilo */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Bottoni Registrati / Accedi */
+.menu-link {
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+  background-color: #f0f0f0;
+  padding: 10px 24px;
+  border: 1.5px solid #ccc;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.menu-link:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Icona profilo */
+.profile-icon {
+  width: 36px; /* aumentato da 28px */
+  height: 36px; /* aumentato da 28px */
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  border: 1.5px solid #ccc;
+  transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive per mobile */
+@media screen and (max-width: 900px) {
+  .menu_icon {
     display: block;
-    width: 30px;
-}
-  
-  .menu {
+  }
+
+  .navbar-right {
     position: fixed;
-    top: 0;
+    top: 60px;
     right: 0;
-    height: 100%;
-    width: 250px;
-    background: #212ea0;
+    background-color: white;
     flex-direction: column;
-    padding-top: 80px;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     transform: translateX(100%);
-    gap: 30px;
+    transition: transform 0.3s ease;
+    z-index: 101;
   }
 
-  
-  .menu.open {
+  .navbar-right.open {
     transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
-  }
-
-
-  .menu span{
-    width: 100%;
-  }
-
-  .menu-link {
-    color: #fff;
-    padding: 15px 0;
-    width: 100%;
-  }
-
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    margin: 15px auto 0;
-    background: #0033665d;
-    display: none;
-    border-radius: 0;
-  }
-
-  .dropdown-menu a {
-    color: #eee;
-  }
-
-  .dropdown-menu a:hover {
-    color: black;
-  }
-
-  .menu span:last-child{
-    background: none;
   }
 }

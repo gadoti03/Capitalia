@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll'
 
 import { useLocation } from 'react-router-dom';
-
+import Navbar from './Components/Navbar/Navbar';
 import { Helmet, HelmetProvider } from 'react-helmet-async'; // 👈 Importa Helmet
 
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <>
-      nulla cosmico
+     <Navbar />
     </>
   );
 };

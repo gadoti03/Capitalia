@@ -14,6 +14,12 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
+  // Funzione per estrarre il valore del cookie 'username'
+  const getUsernameFromCookies = () => {
+    const match = document.cookie.match(/(?:^|;\s*)username=([^;]+)/);
+    return match ? decodeURIComponent(match[1]) : null;
+  };
+
   const handleMenuClick = () => {
     if (window.innerWidth <= 900) setIsOpen(!isOpen);
   };
@@ -28,20 +34,16 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  // Controlla se c'è un cookie che indica l'autenticazione
   useEffect(() => {
     const checkAuth = () => {
-      // Sostituisci 'token' con il nome effettivo del tuo cookie di autenticazione
       const cookies = document.cookie;
-      const hasAuthCookie = cookies.includes('username='); 
+      const hasAuthCookie = cookies.includes('username=');
       setIsAuthenticated(hasAuthCookie);
     };
 
     checkAuth();
 
-    // Facoltativo: aggiorna lo stato quando i cookie cambiano
-    const cookieObserver = setInterval(checkAuth, 5000); // controlla ogni 5 secondi
-
+    const cookieObserver = setInterval(checkAuth, 5000); // verifica ogni 5 secondi
     return () => clearInterval(cookieObserver);
   }, []);
 
@@ -64,6 +66,8 @@ const Navbar = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const username = getUsernameFromCookies();
 
   return (
     <>
@@ -92,9 +96,12 @@ const Navbar = () => {
               </button>
             </>
           ) : null}
-          <Link to="/profile/" onClick={handleMenuClick}>
-            <img src={profile_icon} alt="Profilo" className="profile-icon" />
-          </Link>
+
+          {isAuthenticated && username && (
+            <Link to={`/profilo/${username}`} onClick={handleMenuClick}>
+              <img src={profile_icon} alt="Profilo" className="profile-icon" />
+            </Link>
+          )}
         </div>
       </nav>
 
