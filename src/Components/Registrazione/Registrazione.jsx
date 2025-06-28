@@ -1,16 +1,81 @@
-import React from "react";
-import "./Registrazione.css";
+import React, { useState } from "react";
 
-export default function Registrazione() {
+import "./Registrazione.css"; 
+const apiDbUrl = import.meta.env.VITE_API_DB_URL
+
+export default function Registrazione(buttonAutentication) {
+  const [formData, setFormData] = useState({
+
+    username: '',
+    nome: '',
+    cognome: '',
+    email: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Controllo se username già esiste
+      const res = await fetch(`${apiDbUrl}/profili?username=${formData.username}`);
+      const userExists = await res.json();
+      if (userExists.length > 0) {
+        alert("Username già esistente!");
+        return;
+      }
+
+      // Controllo se email già registrata
+      const resEmail = await fetch(`${apiDbUrl}/profili?email=${formData.email}`);
+      const emailExists = await resEmail.json();
+      if (emailExists.length > 0) {
+        alert("Email già registrata!");
+        return;
+      }
+
+      // Aggiunta utente
+      const response = await fetch(`${apiDbUrl}/profili`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          ...formData,
+          numero_servizi_pubblicati: 0,
+          numero_servizi_eliminati: 0,
+          url_immagine_profilo: "",
+          biografia: ""
+        })
+      });
+
+      if (response.ok) {
+        alert("Registrazione completata!");
+
+      } else {
+        alert("Errore durante la registrazione.");
+      }
+
+    } catch (error) {
+      console.error("Errore:", error);
+    }
+  };
+
   return (
     <>
       <h2 className="signup-title">REGISTRAZIONE</h2>
 
-      <form className="signup-form">
+      <form className="signup-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Username</label>
           <input
             type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
             required
             maxLength="32"
             pattern="^[a-zA-Z]{1,32}$"
@@ -21,11 +86,27 @@ export default function Registrazione() {
         <div className="form-row">
           <div className="form-group">
             <label>Nome</label>
-            <input type="text" required maxLength="32" title="Massimo 32 caratteri" />
+            <input
+              type="text"
+              name="nome"
+              value={formData.nome}
+              onChange={handleChange}
+              required
+              maxLength="32"
+              title="Massimo 32 caratteri"
+            />
           </div>
           <div className="form-group">
             <label>Cognome</label>
-            <input type="text" required maxLength="32" title="Massimo 32 caratteri" />
+            <input
+              type="text"
+              name="cognome"
+              value={formData.cognome}
+              onChange={handleChange}
+              required
+              maxLength="32"
+              title="Massimo 32 caratteri"
+            />
           </div>
         </div>
 
@@ -33,9 +114,12 @@ export default function Registrazione() {
           <label>Email</label>
           <input
             type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             required
             maxLength="32"
-            pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$"
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
             title="Inserisci un'email valida (max 32 caratteri)"
           />
         </div>
@@ -44,10 +128,13 @@ export default function Registrazione() {
           <label>Password</label>
           <input
             type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
             required
             minLength="8"
             maxLength="32"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,32}$"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,32}$"
             title="Almeno 8 caratteri, con almeno una maiuscola, una minuscola e un numero. Max 32 caratteri"
           />
         </div>
