@@ -9,7 +9,8 @@
       "biografia": "Appassionato di servizi digitali e sviluppo web.",
       "url_immagine_profilo": "https://example.com/profile1.jpg",
       "numero_servizi_pubblicati": 12,
-      "numero_servizi_eliminati": 2
+      "numero_servizi_eliminati": 2,
+      "admin": false
     },
     {
       "username": "luna_m",
@@ -20,7 +21,8 @@
       "biografia": "Designer freelance e creativa.",
       "url_immagine_profilo": "https://example.com/profile2.jpg",
       "numero_servizi_pubblicati": 8,
-      "numero_servizi_eliminati": 1
+      "numero_servizi_eliminati": 1,
+      "admin": false
     },
     {
       "username": "gino_b",
@@ -31,7 +33,8 @@
       "biografia": "Esperto in consulenze tecniche e IT.",
       "url_immagine_profilo": "https://example.com/profile3.jpg",
       "numero_servizi_pubblicati": 15,
-      "numero_servizi_eliminati": 3
+      "numero_servizi_eliminati": 3,
+      "admin": false
     },
     {
       "username": "maria_p",
@@ -42,7 +45,8 @@
       "biografia": "Consulente marketing e social media.",
       "url_immagine_profilo": "https://example.com/profile4.jpg",
       "numero_servizi_pubblicati": 7,
-      "numero_servizi_eliminati": 0
+      "numero_servizi_eliminati": 0,
+      "admin": false
     },
     {
       "username": "daniele_c",
@@ -53,7 +57,8 @@
       "biografia": "Fotografo professionista e videomaker.",
       "url_immagine_profilo": "https://example.com/profile5.jpg",
       "numero_servizi_pubblicati": 9,
-      "numero_servizi_eliminati": 1
+      "numero_servizi_eliminati": 1,
+      "admin": false
     },
     {
       "username": "elena_v",
@@ -64,7 +69,8 @@
       "biografia": "Insegnante di yoga e benessere.",
       "url_immagine_profilo": "https://example.com/profile6.jpg",
       "numero_servizi_pubblicati": 10,
-      "numero_servizi_eliminati": 0
+      "numero_servizi_eliminati": 0,
+      "admin": false
     },
     {
       "username": "federico_m",
@@ -75,7 +81,8 @@
       "biografia": "Sviluppatore software e consulente IT.",
       "url_immagine_profilo": "https://example.com/profile7.jpg",
       "numero_servizi_pubblicati": 11,
-      "numero_servizi_eliminati": 2
+      "numero_servizi_eliminati": 2,
+      "admin": false
     },
     {
       "username": "simona_r",
@@ -86,7 +93,8 @@
       "biografia": "Coach personale e motivazionale.",
       "url_immagine_profilo": "https://example.com/profile8.jpg",
       "numero_servizi_pubblicati": 6,
-      "numero_servizi_eliminati": 0
+      "numero_servizi_eliminati": 0,
+      "admin": false
     },
     {
       "username": "andrea_f",
@@ -97,7 +105,8 @@
       "biografia": "Esperto in finanza personale e investimenti.",
       "url_immagine_profilo": "https://example.com/profile9.jpg",
       "numero_servizi_pubblicati": 13,
-      "numero_servizi_eliminati": 4
+      "numero_servizi_eliminati": 4,
+      "admin": false
     },
     {
       "username": "valeria_g",
@@ -108,19 +117,8 @@
       "biografia": "Specialista in eventi e organizzazione.",
       "url_immagine_profilo": "https://example.com/profile10.jpg",
       "numero_servizi_pubblicati": 14,
-      "numero_servizi_eliminati": 1
-    },
-    {
-      "id": "982f",
-      "username": "f",
-      "nome": "Fra",
-      "cognome": "Bad",
-      "email": "fra@gmail.com",
-      "password": "FFFFFFfffffff32749843",
-      "numero_servizi_pubblicati": 0,
-      "numero_servizi_eliminati": 0,
-      "url_immagine_profilo": "",
-      "biografia": ""
+      "numero_servizi_eliminati": 1,
+      "admin": false
     },
     {
       "id": "4337",
@@ -132,19 +130,8 @@
       "numero_servizi_pubblicati": 0,
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "",
-      "biografia": ""
-    },
-    {
-      "id": "e5eb",
-      "username": "GIANNIBISMARCK",
-      "nome": "GIANNI",
-      "cognome": "BISMARCK",
-      "email": "gb@gmail.com",
-      "password": "GIANNiiii10000",
-      "numero_servizi_pubblicati": 0,
-      "numero_servizi_eliminati": 0,
-      "url_immagine_profilo": "",
-      "biografia": ""
+      "biografia": "",
+      "admin": false
     },
     {
       "id": "b251",
@@ -156,19 +143,8 @@
       "numero_servizi_pubblicati": 0,
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "",
-      "biografia": ""
-    },
-    {
-      "id": "5953",
-      "username": "Paperino",
-      "nome": "pappa",
-      "cognome": "caccca",
-      "email": "acsas@gmail.com",
-      "password": "AFIUBAFNIJNCAkjbaciubsacd23",
-      "numero_servizi_pubblicati": 0,
-      "numero_servizi_eliminati": 0,
-      "url_immagine_profilo": "",
-      "biografia": ""
+      "biografia": "",
+      "admin": true
     },
     {
       "id": "0dbe",
@@ -180,19 +156,8 @@
       "numero_servizi_pubblicati": 0,
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "",
-      "biografia": ""
-    },
-    {
-      "id": "8159",
-      "username": "LNANKLNA",
-      "nome": "LONLONI",
-      "cognome": "LONLONLO",
-      "email": "NLON@GMAIL.COM",
-      "password": "A13hjmmmmmmmmmmmm",
-      "numero_servizi_pubblicati": 0,
-      "numero_servizi_eliminati": 0,
-      "url_immagine_profilo": "",
-      "biografia": ""
+      "biografia": "",
+      "admin": true
     }
   ],
   "servizi": [

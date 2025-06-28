@@ -6,22 +6,23 @@ import './index.css';
 
 // Importa le pagine
 import Autenticazione from './pages/Autenticazione/Autenticazione.jsx'
+import Profilo from './pages/Profilo/Profilo.jsx'
 // import PageNotFound from './pages/PageNotFound/PageNotFound.jsx';
 
 import Cookies from './Components/Cookies/Cookies.jsx';
 
 
-// Definisci le rotte
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
-  { path: "/autenticazione", element: <Autenticazione />},
-
-  // { path: "*", element: <PageNotFound /> }  // Fallback per route non definiti
+  { path: "/autenticazione", element: <Autenticazione /> },
+  { path: "/profilo/:username", element: <Profilo /> },
+  // { path: "/servizio", element: <Servizio /> },
+  // { path: "/:capoluogo", element: <Capoluogo /> },
+  // { path: "*", element: <PageNotFound /> } // fallback
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Cookies />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
