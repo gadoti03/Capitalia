@@ -27,7 +27,7 @@ export default function AuthPage() {
         </div>
 
         <div className="signup-logo">
-          <img src="/src/assets/logo.jpeg" alt="Logo Capitalia" />
+          <img src="/src/assets/logo_no_sfondo.jpeg" alt="Logo Capitalia" />
         </div>
 
         {/* Render dinamico del contenuto */}
