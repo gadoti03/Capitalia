@@ -1,0 +1,562 @@
+{
+  "users": [
+    {
+      "username": "svolgo92",
+      "password": "pass1234",
+      "nome": "Marco",
+      "cognome": "Rossi",
+      "email": "marco.rossi@example.com",
+      "biografia": "Appassionato di servizi digitali e sviluppo web.",
+      "url_immagine_profilo": "https://example.com/profile1.jpg",
+      "numero_servizi_pubblicati": 12,
+      "numero_servizi_eliminati": 2
+    },
+    {
+      "username": "luna_m",
+      "password": "luna2023",
+      "nome": "Luna",
+      "cognome": "Moretti",
+      "email": "luna.moretti@example.com",
+      "biografia": "Designer freelance e creativa.",
+      "url_immagine_profilo": "https://example.com/profile2.jpg",
+      "numero_servizi_pubblicati": 8,
+      "numero_servizi_eliminati": 1
+    },
+    {
+      "username": "gino_b",
+      "password": "ginob321",
+      "nome": "Gino",
+      "cognome": "Bianchi",
+      "email": "gino.bianchi@example.com",
+      "biografia": "Esperto in consulenze tecniche e IT.",
+      "url_immagine_profilo": "https://example.com/profile3.jpg",
+      "numero_servizi_pubblicati": 15,
+      "numero_servizi_eliminati": 3
+    },
+    {
+      "username": "maria_p",
+      "password": "mariapass",
+      "nome": "Maria",
+      "cognome": "Pellegrini",
+      "email": "maria.pellegrini@example.com",
+      "biografia": "Consulente marketing e social media.",
+      "url_immagine_profilo": "https://example.com/profile4.jpg",
+      "numero_servizi_pubblicati": 7,
+      "numero_servizi_eliminati": 0
+    },
+    {
+      "username": "daniele_c",
+      "password": "daniele2025",
+      "nome": "Daniele",
+      "cognome": "Conti",
+      "email": "daniele.conti@example.com",
+      "biografia": "Fotografo professionista e videomaker.",
+      "url_immagine_profilo": "https://example.com/profile5.jpg",
+      "numero_servizi_pubblicati": 9,
+      "numero_servizi_eliminati": 1
+    },
+    {
+      "username": "elena_v",
+      "password": "elena_v_88",
+      "nome": "Elena",
+      "cognome": "Ventura",
+      "email": "elena.ventura@example.com",
+      "biografia": "Insegnante di yoga e benessere.",
+      "url_immagine_profilo": "https://example.com/profile6.jpg",
+      "numero_servizi_pubblicati": 10,
+      "numero_servizi_eliminati": 0
+    },
+    {
+      "username": "federico_m",
+      "password": "fede_m123",
+      "nome": "Federico",
+      "cognome": "Martini",
+      "email": "federico.martini@example.com",
+      "biografia": "Sviluppatore software e consulente IT.",
+      "url_immagine_profilo": "https://example.com/profile7.jpg",
+      "numero_servizi_pubblicati": 11,
+      "numero_servizi_eliminati": 2
+    },
+    {
+      "username": "simona_r",
+      "password": "simonaR321",
+      "nome": "Simona",
+      "cognome": "Ricci",
+      "email": "simona.ricci@example.com",
+      "biografia": "Coach personale e motivazionale.",
+      "url_immagine_profilo": "https://example.com/profile8.jpg",
+      "numero_servizi_pubblicati": 6,
+      "numero_servizi_eliminati": 0
+    },
+    {
+      "username": "andrea_f",
+      "password": "andreaF555",
+      "nome": "Andrea",
+      "cognome": "Fabbri",
+      "email": "andrea.fabbri@example.com",
+      "biografia": "Esperto in finanza personale e investimenti.",
+      "url_immagine_profilo": "https://example.com/profile9.jpg",
+      "numero_servizi_pubblicati": 13,
+      "numero_servizi_eliminati": 4
+    },
+    {
+      "username": "valeria_g",
+      "password": "valeg2025",
+      "nome": "Valeria",
+      "cognome": "Grassi",
+      "email": "valeria.grassi@example.com",
+      "biografia": "Specialista in eventi e organizzazione.",
+      "url_immagine_profilo": "https://example.com/profile10.jpg",
+      "numero_servizi_pubblicati": 14,
+      "numero_servizi_eliminati": 1
+    }
+  ],
+  "servizi": [
+    {
+      "nome": "Cinema Massimo",
+      "capoluogo": "Torino",
+      "collocazione": "Piemonte",
+      "categoria": "INTRATTENIMENTO",
+      "lista_immagini": [
+        "https://example.com/cinema_massimo_1.jpg",
+        "https://example.com/cinema_massimo_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Ottima esperienza, schermo grande e audio eccellente.",
+          "data": "2025-05-20",
+          "ora": "20:30",
+          "username_proprietario": "svolgo92"
+        },
+        {
+          "valutazione": 4,
+          "commento": "Posti comodi, unica pecca qualche problema con la cassa.",
+          "data": "2025-05-21",
+          "ora": "18:00",
+          "username_proprietario": "luna_m"
+        }
+      ],
+      "username_proprietario": "svolgo92"
+    },
+    {
+      "nome": "Ristorante Del Cambio",
+      "capoluogo": "Torino",
+      "collocazione": "Piemonte",
+      "categoria": "RISTORAZIONE",
+      "lista_immagini": [
+        "https://example.com/ristorante_del_cambio_1.jpg",
+        "https://example.com/ristorante_del_cambio_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Piatti tradizionali piemontesi di altissima qualità.",
+          "data": "2025-04-15",
+          "ora": "21:00",
+          "username_proprietario": "gino_b"
+        },
+        {
+          "valutazione": 4,
+          "commento": "Servizio impeccabile, prezzi un po' alti ma giustificati.",
+          "data": "2025-04-16",
+          "ora": "20:30",
+          "username_proprietario": "daniele_c"
+        }
+      ],
+      "username_proprietario": "luna_m"
+    },
+    {
+      "nome": "GTT - Servizi Taxi",
+      "capoluogo": "Torino",
+      "collocazione": "Piemonte",
+      "categoria": "TRASPORTI",
+      "lista_immagini": [
+        "https://example.com/gtt_taxi_1.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 4,
+          "commento": "Taxi puntuali e gentili, ma qualche volta un po' cari.",
+          "data": "2025-03-10",
+          "ora": "19:00",
+          "username_proprietario": "maria_p"
+        },
+        {
+          "valutazione": 5,
+          "commento": "Comodissimo per spostarsi in città.",
+          "data": "2025-03-12",
+          "ora": "18:30",
+          "username_proprietario": "federico_m"
+        }
+      ],
+      "username_proprietario": "gino_b"
+    },
+    {
+      "nome": "Museo Egizio Torino",
+      "capoluogo": "Torino",
+      "collocazione": "Piemonte",
+      "categoria": "CULTURA",
+      "lista_immagini": [
+        "https://example.com/museo_egizio_1.jpg",
+        "https://example.com/museo_egizio_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Collezione incredibile, da non perdere assolutamente.",
+          "data": "2025-02-20",
+          "ora": "15:00",
+          "username_proprietario": "simona_r"
+        },
+        {
+          "valutazione": 4,
+          "commento": "Museo ben organizzato, spiegazioni chiare.",
+          "data": "2025-02-22",
+          "ora": "14:00",
+          "username_proprietario": "andrea_f"
+        }
+      ],
+      "username_proprietario": "maria_p"
+    },
+    {
+      "nome": "Hotel Principi di Piemonte",
+      "capoluogo": "Torino",
+      "collocazione": "Piemonte",
+      "categoria": "OSPITALITÀ",
+      "lista_immagini": [
+        "https://example.com/hotel_principi_1.jpg",
+        "https://example.com/hotel_principi_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Hotel elegante, camere spaziose e staff disponibile.",
+          "data": "2025-01-10",
+          "ora": "13:00",
+          "username_proprietario": "valeria_g"
+        },
+        {
+          "valutazione": 4,
+          "commento": "Ottima posizione centrale, ideale per visitare la città.",
+          "data": "2025-01-12",
+          "ora": "12:00",
+          "username_proprietario": "svolgo92"
+        }
+      ],
+      "username_proprietario": "daniele_c"
+    },
+    {
+      "nome": "Teatro alla Scala",
+      "capoluogo": "Milano",
+      "collocazione": "Lombardia",
+      "categoria": "INTRATTENIMENTO",
+      "lista_immagini": [
+        "https://example.com/scala_1.jpg",
+        "https://example.com/scala_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Spettacoli di alta qualità in una location storica.",
+          "data": "2025-06-01",
+          "ora": "21:00",
+          "username_proprietario": "luna_m"
+        },
+        {
+          "valutazione": 5,
+          "commento": "Atmosfera unica e servizi eccellenti.",
+          "data": "2025-06-02",
+          "ora": "20:30",
+          "username_proprietario": "gino_b"
+        }
+      ],
+      "username_proprietario": "elena_v"
+    },
+    {
+      "nome": "Ristorante Cracco",
+      "capoluogo": "Milano",
+      "collocazione": "Lombardia",
+      "categoria": "RISTORAZIONE",
+      "lista_immagini": [
+        "https://example.com/cracco_1.jpg",
+        "https://example.com/cracco_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Piatti innovativi e servizio impeccabile.",
+          "data": "2025-05-15",
+          "ora": "20:00",
+          "username_proprietario": "daniele_c"
+        },
+        {
+          "valutazione": 4,
+          "commento": "Ottima esperienza, prezzo un po' alto.",
+          "data": "2025-05-16",
+          "ora": "21:00",
+          "username_proprietario": "maria_p"
+        }
+      ],
+      "username_proprietario": "federico_m"
+    },
+    {
+      "nome": "ATM Milano - Metropolitana",
+      "capoluogo": "Milano",
+      "collocazione": "Lombardia",
+      "categoria": "TRASPORTI",
+      "lista_immagini": [
+        "https://example.com/atm_milano_1.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Servizio efficiente e pulito.",
+          "data": "2025-04-10",
+          "ora": "18:00",
+          "username_proprietario": "simona_r"
+        },
+        {
+          "valutazione": 4,
+          "commento": "A volte affollata ma funziona bene.",
+          "data": "2025-04-12",
+          "ora": "17:30",
+          "username_proprietario": "andrea_f"
+        }
+      ],
+      "username_proprietario": "andrea_f"
+    },
+    {
+      "nome": "Pinacoteca di Brera",
+      "capoluogo": "Milano",
+      "collocazione": "Lombardia",
+      "categoria": "CULTURA",
+      "lista_immagini": [
+        "https://example.com/brera_1.jpg",
+        "https://example.com/brera_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Capolavori dell’arte italiana, museo meraviglioso.",
+          "data": "2025-03-20",
+          "ora": "16:00",
+          "username_proprietario": "valeria_g"
+        },
+        {
+          "valutazione": 4,
+          "commento": "Ottima esperienza culturale, da visitare.",
+          "data": "2025-03-22",
+          "ora": "15:30",
+          "username_proprietario": "svolgo92"
+        }
+      ],
+      "username_proprietario": "simona_r"
+    },
+    {
+      "nome": "Hotel Magna Pars Suites",
+      "capoluogo": "Milano",
+      "collocazione": "Lombardia",
+      "categoria": "OSPITALITÀ",
+      "lista_immagini": [
+        "https://example.com/magna_pars_1.jpg",
+        "https://example.com/magna_pars_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Design moderno e posizione centrale.",
+          "data": "2025-01-15",
+          "ora": "13:00",
+          "username_proprietario": "andrea_f"
+        },
+        {
+          "valutazione": 4,
+          "commento": "Camera confortevole, staff cordiale.",
+          "data": "2025-01-17",
+          "ora": "14:30",
+          "username_proprietario": "gino_b"
+        }
+      ],
+      "username_proprietario": "valeria_g"
+    },
+    {
+      "nome": "Teatro Regio di Torino",
+      "capoluogo": "Torino",
+      "collocazione": "Piemonte",
+      "categoria": "INTRATTENIMENTO",
+      "lista_immagini": [
+        "https://example.com/teatro_regio_1.jpg",
+        "https://example.com/teatro_regio_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Eccellente repertorio lirico e operistico.",
+          "data": "2025-05-22",
+          "ora": "21:00",
+          "username_proprietario": "svolgo92"
+        }
+      ],
+      "username_proprietario": "daniele_c"
+    },
+    {
+      "nome": "Ristorante Osteria Francescana",
+      "capoluogo": "Modena",
+      "collocazione": "Emilia-Romagna",
+      "categoria": "RISTORAZIONE",
+      "lista_immagini": [
+        "https://example.com/osteria_francescana_1.jpg",
+        "https://example.com/osteria_francescana_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Esperienza culinaria unica al mondo.",
+          "data": "2025-06-10",
+          "ora": "20:00",
+          "username_proprietario": "elena_v"
+        }
+      ],
+      "username_proprietario": "maria_p"
+    },
+    {
+      "nome": "Trenitalia - Stazione Centrale",
+      "capoluogo": "Milano",
+      "collocazione": "Lombardia",
+      "categoria": "TRASPORTI",
+      "lista_immagini": [
+        "https://example.com/trenitalia_milano_1.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 4,
+          "commento": "Stazione molto grande, buona connettività.",
+          "data": "2025-04-25",
+          "ora": "18:30",
+          "username_proprietario": "federico_m"
+        }
+      ],
+      "username_proprietario": "simona_r"
+    },
+    {
+      "nome": "Museo Nazionale del Cinema",
+      "capoluogo": "Torino",
+      "collocazione": "Piemonte",
+      "categoria": "CULTURA",
+      "lista_immagini": [
+        "https://example.com/museo_cinema_1.jpg",
+        "https://example.com/museo_cinema_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Percorso espositivo interattivo e coinvolgente.",
+          "data": "2025-03-30",
+          "ora": "16:30",
+          "username_proprietario": "valeria_g"
+        }
+      ],
+      "username_proprietario": "daniele_c"
+    },
+    {
+      "nome": "Hotel Daniel",
+      "capoluogo": "Firenze",
+      "collocazione": "Toscana",
+      "categoria": "OSPITALITÀ",
+      "lista_immagini": [
+        "https://example.com/hotel_daniel_1.jpg",
+        "https://example.com/hotel_daniel_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 4,
+          "commento": "Posizione centrale, buon rapporto qualità/prezzo.",
+          "data": "2025-02-18",
+          "ora": "14:00",
+          "username_proprietario": "svolgo92"
+        }
+      ],
+      "username_proprietario": "luna_m"
+    },
+    {
+      "nome": "Teatro Verdi",
+      "capoluogo": "Firenze",
+      "collocazione": "Toscana",
+      "categoria": "INTRATTENIMENTO",
+      "lista_immagini": [
+        "https://example.com/teatro_verdi_1.jpg",
+        "https://example.com/teatro_verdi_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Strepitose rappresentazioni teatrali e concerti.",
+          "data": "2025-05-12",
+          "ora": "20:30",
+          "username_proprietario": "maria_p"
+        }
+      ],
+      "username_proprietario": "andrea_f"
+    },
+    {
+      "nome": "Ristorante Enoteca Pinchiorri",
+      "capoluogo": "Firenze",
+      "collocazione": "Toscana",
+      "categoria": "RISTORAZIONE",
+      "lista_immagini": [
+        "https://example.com/enoteca_pinchiorri_1.jpg",
+        "https://example.com/enoteca_pinchiorri_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Piatti raffinati e servizio di livello mondiale.",
+          "data": "2025-06-20",
+          "ora": "21:00",
+          "username_proprietario": "gino_b"
+        }
+      ],
+      "username_proprietario": "simona_r"
+    },
+    {
+      "nome": "ATAF - Trasporto Pubblico",
+      "capoluogo": "Firenze",
+      "collocazione": "Toscana",
+      "categoria": "TRASPORTI",
+      "lista_immagini": [
+        "https://example.com/ataf_1.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 4,
+          "commento": "Buona copertura, qualche ritardo occasionale.",
+          "data": "2025-04-05",
+          "ora": "17:00",
+          "username_proprietario": "daniele_c"
+        }
+      ],
+      "username_proprietario": "luna_m"
+    },
+    {
+      "nome": "Galleria degli Uffizi",
+      "capoluogo": "Firenze",
+      "collocazione": "Toscana",
+      "categoria": "CULTURA",
+      "lista_immagini": [
+        "https://example.com/uffizi_1.jpg",
+        "https://example.com/uffizi_2.jpg"
+      ],
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Capolavori dell'arte rinascimentale.",
+          "data": "2025-03-10",
+          "ora": "15:00",
+          "username_proprietario": "valeria_g"
+        }
+      ],
+      "username_proprietario": "maria_p"
+    }
+  ]
+}

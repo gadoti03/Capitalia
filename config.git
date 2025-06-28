@@ -1,0 +1,36 @@
+cd ~/Scrivania/IngSW/IngSW  # vai nella cartella del progetto
+
+git init                     # inizializza git (se non l'hai già fatto)
+git clone https://<TOKEN>@github.com/username/repo.git # clono repository con token
+
+git add .                    # aggiungi tutti i file
+git commit -m "Initial commit: progetto React con Vite"  # fai commit
+git branch -M main           # assicurati di chiamare il branch principale main
+
+# spinge le modifiche locali alla repostory github
+# 1) aggiungi allo staging (git add)
+# 2) salvi in un commit  (git commit)
+# 3) pusho sulla repository github
+git push -u origin main
+
+# salvo il token
+git config --global credential.helper store
+
+# controlla i file presenti nel progetto non committati (o modificati)
+git status
+
+# aggiungo tutti i file modificati
+git add .
+
+# aggiungo un file specifico
+git add <nomefile>
+
+# commit
+git commit -m "commit!!!!!!!!!!"
+
+# prendo le modifiche di ciccio
+git pull origin main
+
+# dopo il pull e il merge automatico
+git push origin main
+
