@@ -11,7 +11,7 @@ export default function Login() {
 
         <form className="login-form">
           <div className="form-group">
-            <label>Username o Email</label>
+            <label>Username</label>
             <input type="text" />
           </div>
 
