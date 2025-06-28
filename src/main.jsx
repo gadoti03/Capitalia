@@ -5,7 +5,7 @@ import App from './App.jsx';
 import './index.css';
 
 // Importa le pagine
-import Registrazione from './pages/Registrazione/Registrazione.jsx'
+import Autenticazione from './pages/Autenticazione/Autenticazione.jsx'
 import Terms from './pages/Terms/Terms.jsx';
 import Policy from './pages/Policy/Policy.jsx';
 import PageNotFound from './pages/PageNotFound/PageNotFound.jsx';
@@ -17,7 +17,7 @@ import Cookies from './Components/Cookies/Cookies.jsx';
 // Definisci le rotte
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
-  { path: "/registrazione", element: <Registrazione />},
+  { path: "/autenticazione", element: <Autenticazione />},
   { path: "/terms", element: <Terms /> },
   { path: "/policy", element: <Policy /> },
   { path: "/FAQ", element: <FAQ /> },

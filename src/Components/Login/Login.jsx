@@ -5,9 +5,7 @@ export default function Login() {
   return (
     <div className="login-container">
       <div className="login-box">
-        <div className="login-logo">
-          <img src="/logo_capitalia.png" alt="Logo Capitalia" />
-        </div>
+
 
         <h2 className="login-title">LOGIN</h2>
 
