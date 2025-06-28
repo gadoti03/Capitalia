@@ -109,6 +109,54 @@
       "url_immagine_profilo": "https://example.com/profile10.jpg",
       "numero_servizi_pubblicati": 14,
       "numero_servizi_eliminati": 1
+    },
+    {
+      "id": "982f",
+      "username": "f",
+      "nome": "Fra",
+      "cognome": "Bad",
+      "email": "fra@gmail.com",
+      "password": "FFFFFFfffffff32749843",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": ""
+    },
+    {
+      "id": "4337",
+      "username": "LUCAMERDA",
+      "nome": "LUCA",
+      "cognome": "MERDONE",
+      "email": "lucamerda@gmail.com",
+      "password": "FFFfff3333",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": ""
+    },
+    {
+      "id": "e5eb",
+      "username": "GIANNIBISMARCK",
+      "nome": "GIANNI",
+      "cognome": "BISMARCK",
+      "email": "gb@gmail.com",
+      "password": "GIANNiiii10000",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": ""
+    },
+    {
+      "id": "b251",
+      "username": "FRANCOGIOIA",
+      "nome": "FRANCO",
+      "cognome": "GIOIA",
+      "email": "francoo@gmail.com",
+      "password": "FranchinoGioia01",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": ""
     }
   ],
   "servizi": [
