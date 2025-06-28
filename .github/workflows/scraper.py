@@ -30,6 +30,8 @@ time.sleep(5)
 # Ottieni il codice HTML della pagina
 html_content = driver.page_source
 
+print(html_content)
+
 # Chiudi il browser
 driver.quit()
 

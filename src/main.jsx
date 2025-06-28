@@ -42,7 +42,8 @@ import TFA from './pages/TFA/TFA.jsx';
 import Moscati from './pages/Moscati/Moscati.jsx';
 import Master from './pages/Master/Master.jsx';
 import Cookies from './Components/Cookies/Cookies.jsx';
-import CFU30 from './pages/30CFU/30CFU.jsx';;
+import CFU30 from './pages/30CFU/30CFU.jsx';
+import News from './pages/News/News.jsx';
 
 // Definisci le rotte
 const router = createBrowserRouter([
@@ -83,6 +84,7 @@ const router = createBrowserRouter([
   { path: "/Scuola Moscati", element: <Moscati /> },
   { path: "/Polo_universitario_128_eCampus/Master", element: <Master /> },
   { path: "/Polo_universitario_128_eCampus/30CFU", element: <CFU30 /> },
+  { path: "/News", element: <News /> },
   { path: "/error/404", element: <PageNotFound /> },
   { path: "*", element: <PageNotFound /> }  // Fallback per route non definiti
 ]);

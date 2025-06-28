@@ -69,6 +69,7 @@ const Navbar = () => {
         <span><Link to="/Polo_universitario_128_eCampus" className="menu-link">eCampus</Link></span>
         <span><Link to="/TFA" className="menu-link">TFA</Link></span>
         <span><Link to="/Scuola Moscati" className="menu-link">Scuola Moscati<br/>InfoPoint</Link></span>
+        <span><Link to="/News" className="menu-link">News</Link></span>  
           <span className="dropdown-navbar" onMouseEnter={() => window.innerWidth > 900 && handleDropdownToggle(1)} onMouseLeave={() => window.innerWidth > 900 && handleDropdownToggle(null)} onClick={() => window.innerWidth <= 900 && handleDropdownToggle(1)}>
             <a className="menu-link">La Scuola</a>
             <div className={`dropdown-menu ${dropdownOpen === 1 || mobileDropdownOpen === 1 ? 'open' : ''}`}>
