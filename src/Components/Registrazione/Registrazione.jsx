@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import "./Registrazione.css"; 
 const apiDbUrl = import.meta.env.VITE_API_DB_URL
 
-export default function Registrazione(buttonAutentication) {
-  const [formData, setFormData] = useState({
-
+export default function Registrazione({ setActiveTab }) {
+    const [formData, setFormData] = useState({
     username: '',
     nome: '',
     cognome: '',
@@ -54,7 +53,7 @@ export default function Registrazione(buttonAutentication) {
 
       if (response.ok) {
         alert("Registrazione completata!");
-
+        setActiveTab("login"); // Passa alla schermata di login
       } else {
         alert("Errore durante la registrazione.");
       }

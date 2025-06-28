@@ -31,7 +31,7 @@ export default function AuthPage() {
         </div>
 
         {/* Render dinamico del contenuto */}
-        {activeTab === "signup" ? <Registrazione /> : <Login />}
+        {activeTab === "signup" ? <Registrazione setActiveTab={setActiveTab} /> : <Login />}
       </div>
     </div>
   );
