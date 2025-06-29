@@ -6,7 +6,7 @@ const Cartina = () => {
   const navigate = useNavigate();
 
   const handleClickRegione = (regione) => {
-    navigate(`/homecapoluogo/${regione}`);
+    navigate(`/capoluogo/${regione}`);
   };
 
   return (
@@ -138,7 +138,7 @@ const Cartina = () => {
           coords="438,303,418,320,405,333,405,358,430,370,454,371,466,365,477,350"
           alt="L'Aquila"
           title="L'Aquila"
-          onClick={() => handleClickRegione('LAquila')}
+          onClick={() => handleClickRegione('L\'Aquila')}
           style={{ cursor: 'pointer' }}
         />
         <area
