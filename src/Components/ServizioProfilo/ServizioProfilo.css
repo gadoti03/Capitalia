@@ -1,6 +1,7 @@
 .servizio-card {
   display: flex;
   background: white;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   border-radius: 12px;
   overflow: hidden;
   width: 100%;

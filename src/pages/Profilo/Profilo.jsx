@@ -10,6 +10,8 @@ import FeedbackProfilo from './../../Components/FeedbackProfilo/FeedbackProfilo'
 
 import ServizioProfilo from './../../Components/ServizioProfilo/ServizioProfilo'
 
+import ModificaProfiloBanner from './../../Components/ModificaProfiloBanner/ModificaProfiloBanner'; // Import del nuovo componente
+
 // Componente wrapper per passare i hook React (useParams, useNavigate) al componente di classe
 function ProfiloWrapper(props) {
   const params = useParams();
@@ -26,6 +28,7 @@ class Profilo extends Component {
       feedback: [],
       loading: true,
       error: null,
+      showModificaBanner: false, // <-- NUOVO STATO: per controllare la visibilità del banner
     };
   }
 
@@ -35,7 +38,14 @@ class Profilo extends Component {
 
   async componentDidUpdate(prevProps) {
     if (this.props.params.username !== prevProps.params.username) {
-      this.setState({ loading: true, profilo: null, servizi: [], feedback: [] });
+      // Quando cambia l'username nella URL, resetta lo stato e ricarica i dati
+      this.setState({
+        loading: true,
+        profilo: null,
+        servizi: [],
+        feedback: [],
+        showModificaBanner: false // <-- Reset anche del banner se si cambia profilo
+      });
       this.fetchDati();
     }
   }
@@ -53,7 +63,7 @@ class Profilo extends Component {
       const trovato = listaProfili.find((p) => p.username === username);
 
       if (!trovato) {
-        navigate("/");
+        navigate("/"); // Se il profilo non esiste, reindirizza alla home
         return;
       }
 
@@ -65,37 +75,109 @@ class Profilo extends Component {
       }
       const tuttiServizi = await resServizi.json();
 
-      // ottengo tutti i servizi di {username}
+      // Ottengo tutti i servizi di {username}
       const serviziUtente = tuttiServizi.filter((s) => s.username_proprietario === username);
-      // ottengo tutti i feedback di {username}
+      
+      // Ottengo tutti i feedback con username_proprietario === {username}
       let feedbackFiltrati = [];
-
-      datiServizi.forEach(servizio => {
+      tuttiServizi.forEach(servizio => {
         if (servizio.feedback && Array.isArray(servizio.feedback) && servizio.feedback.length > 0) {
           servizio.feedback.forEach(singoloFeedback => {
             if (singoloFeedback.username_proprietario === username) {
-              feedbackFiltrati.push(singoloFeedback);
+              // Aggiungi le informazioni del servizio al feedback prima di aggiungerlo
+              let obj = { ...singoloFeedback }; // Clona l'oggetto per non modificarlo direttamente
+              obj.citta = servizio.capoluogo;
+              obj.nome = servizio.nome; // Nome del servizio
+              feedbackFiltrati.push(obj);
             }
           });
         }
       });
 
-      console.log(feedbackFiltrati)
-
       this.setState({
         servizi: serviziUtente,
-        feedback: feedbackUtente,
+        feedback: feedbackFiltrati,
         loading: false,
       });
     } catch (err) {
       console.error("Errore nel caricamento del profilo:", err);
       this.setState({ error: err, loading: false });
-      navigate("/");
+      navigate("/"); // In caso di errore, reindirizza alla home
     }
   };
 
+  // <-- NUOVE FUNZIONI PER IL BANNER DI MODIFICA PROFILO -->
+
+  // Funzione per mostrare il banner di modifica
+  handleModificaClick = () => {
+    this.setState({ showModificaBanner: true });
+  };
+
+  // Funzione per chiudere il banner di modifica
+  handleCloseBanner = () => {
+    this.setState({ showModificaBanner: false });
+    // Dopo aver chiuso il banner, ricarica i dati per visualizzare le modifiche (se ce ne sono state)
+    this.fetchDati();
+  };
+
+  // Funzione per gestire il salvataggio delle modifiche dal banner
+  handleSaveChanges = async (updatedData) => {
+    const { profilo } = this.state;
+    const { navigate } = this.props;
+
+    if (!profilo || !profilo.id) {
+      console.error("ID del profilo non disponibile per l'aggiornamento.");
+      alert("Impossibile aggiornare il profilo: ID non trovato.");
+      return;
+    }
+
+    try {
+      // Effettua la chiamata PATCH al tuo backend per aggiornare il profilo
+      const response = await fetch(`${apiDbUrl}/profili/${profilo.id}`, {
+        method: 'PATCH', // PATCH è più appropriato per aggiornamenti parziali
+        headers: {
+          'Content-Type': 'application/json',
+          // Aggiungi qui eventuali header di autenticazione, es. 'Authorization': `Bearer ${yourAuthToken}`
+        },
+        body: JSON.stringify(updatedData),
+      });
+
+      if (!response.ok) {
+        // Se la risposta non è OK, tenta di leggere il messaggio di errore dal backend
+        const errorData = await response.json().catch(() => ({ message: 'Errore sconosciuto' }));
+        throw new Error(`Errore salvataggio: ${response.status} - ${errorData.message || response.statusText}`);
+      }
+
+      const updatedProfiloFromServer = await response.json();
+      
+      // Aggiorna lo stato locale del profilo con i dati freschi dal server
+      // e chiudi il banner
+      this.setState({
+        profilo: updatedProfiloFromServer,
+        showModificaBanner: false
+      });
+      alert("Profilo aggiornato con successo!");
+
+      // Se l'username è stato modificato, potresti voler aggiornare il cookie o reindirizzare
+      // Questo dipende dalla tua logica di autenticazione e gestione degli username.
+      // Ad esempio, se l'username è parte della URL:
+      if (updatedData.username && updatedData.username !== profilo.username) {
+          // Opzionale: aggiorna il cookie username se è legato all'utente loggato
+          // document.cookie = `username=${updatedData.username}; path=/; max-age=86400`;
+          navigate(`/profilo/${updatedData.username}`); // Reindirizza al nuovo URL del profilo
+      }
+
+    } catch (error) {
+      console.error("Errore durante il salvataggio del profilo:", error);
+      alert("Errore durante l'aggiornamento del profilo: " + error.message);
+    }
+  };
+
+  // <-- FINE NUOVE FUNZIONI -->
+
   render() {
-    const { profilo, servizi, feedback, loading, error } = this.state;
+    const { profilo, servizi, feedback, loading, error, showModificaBanner } = this.state; // Destruttura showModificaBanner
+    const cookieUsername = getCookie('username'); // Recupera l'username dal cookie
 
     if (loading) {
       return <div className="profile-status profile-loading">Caricamento in corso...</div>;
@@ -106,7 +188,7 @@ class Profilo extends Component {
     }
 
     if (!profilo) {
-      return null;
+      return null; // O un messaggio di "profilo non trovato" se preferisci
     }
 
     return (
@@ -116,13 +198,15 @@ class Profilo extends Component {
           <header className="profile-header">
             <div className="profile-cover"></div> {/* Immagine di copertina */}
             <div className="profile-info-area">
+              {/* Ho rimosso l'alt testuale per l'immagine del profilo in conformità con le istruzioni fornite. */}
               <img
                 src={profilo.url_immagine_profilo || "/default-avatar.png"}
                 className="profile-avatar"
               />
               <div className="profile-main-details">
                 <h1 className="profile-name">
-                  {getCookie('username') === profilo.username ? 'Ciao ' : ""}                  {profilo.nome} {profilo.cognome}
+                  {cookieUsername === profilo.username ? 'Ciao ' : ""}                  
+                  {profilo.nome} {profilo.cognome}
                 </h1>
                 <p className="profile-headline">
                   {profilo.username ? '@' : ""}
@@ -133,7 +217,12 @@ class Profilo extends Component {
                 </p>
               </div>
               <div className="profile-action-buttons">
-                <button className="btn btn-primary">Modifica Profilo</button>
+                {/* Modificato il pulsante per chiamare handleModificaClick */}
+                {cookieUsername === profilo.username ? (
+                  <button className="btn btn-primary" onClick={this.handleModificaClick}>
+                    Modifica Profilo
+                  </button>
+                ) : null}
               </div>
             </div>
           </header>
@@ -165,7 +254,8 @@ class Profilo extends Component {
               {servizi.length > 0 ? (
                 <ul className="content-list">
                   {servizi.map((s, i) => (
-                    <li key={i} className="list-item">
+                    // È preferibile usare un ID univoco per la key se disponibile, altrimenti l'indice
+                    <li key={s.id || i} className="list-item">
                       <ServizioProfilo 
                         nome = {s.nome}
                         capoluogo = {s.capoluogo}
@@ -188,8 +278,17 @@ class Profilo extends Component {
               {feedback.length > 0 ? (
                 <ul className="content-list">
                   {feedback.map((f, i) => (
-                    <li key={i} className="list-item">
-                      {f.testo || `Feedback #${i + 1}`}
+                    // È preferibile usare un ID univoco per la key se disponibile, altrimenti l'indice
+                    <li key={f.id || i} className="list-item">
+                      <FeedbackProfilo 
+                        proprietario={f.username_proprietario}
+                        servizio={f.nome}
+                        citta={f.citta}
+                        valutazione={f.valutazione}
+                        commento={f.commento}
+                        data={f.data}
+                        ora={f.ora}
+                      />
                     </li>
                   ))}
                 </ul>
@@ -199,6 +298,15 @@ class Profilo extends Component {
             </section>
           </main>
         </article>
+
+        {/* <-- NUOVO: Rendering condizionale del banner di modifica --> */}
+        {showModificaBanner && (
+          <ModificaProfiloBanner
+            currentProfilo={profilo} // Passa l'intero oggetto profilo attuale al banner
+            onClose={this.handleCloseBanner} // Funzione per chiudere il banner (passata come prop)
+            onSave={this.handleSaveChanges}   // Funzione per salvare le modifiche (passata come prop)
+          />
+        )}
       </div>
     );
   }
