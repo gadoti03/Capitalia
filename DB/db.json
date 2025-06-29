@@ -690,8 +690,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/peperoniCruschi.jpg"
       ],
       "username_proprietario": "fragabbani"
     },
@@ -711,8 +710,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/politeama.jpg"
       ],
       "username_proprietario": "fragabbani"
     },
@@ -732,8 +730,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/ballaro.webp"
       ],
       "username_proprietario": "fragabbani"
     },
