@@ -1,0 +1,98 @@
+/* Sfondo verde */
+.wizard-container {
+  background-color: #3D9A4F;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Colonna dei tre step */
+.wizard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 360px;
+  width: 100%;
+}
+
+/* Box step attivo e disattivo */
+.wizard-card {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+}
+
+/* Header step */
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.step-circle {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.step-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Form */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  padding: 8px 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Bottone Next */
+.form-button {
+  margin-top: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.form-button.disabled {
+  background-color: #d3d3d3;
+  color: white;
+  cursor: not-allowed;
+}
+
+.form-button.enabled {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+/* Step disattivo */
+.disabled-step {
+  padding: 16px 20px;
+  background-color: white;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+}

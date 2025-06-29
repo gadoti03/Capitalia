@@ -19,8 +19,8 @@ const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/autenticazione", element: <Autenticazione /> },
   { path: "/profilo/:username", element: <Profilo /> },
-  { path: "/servizio", element: <Servizio /> },
-  { path: "/:capoluogo", element: <Capoluogo /> },
+  { path: "/servizio/:capoluogo", element: <Servizio /> },
+  { path: "/capoluogo/:citta", element: <Capoluogo /> },
   // { path: "*", element: <PageNotFound /> } // fallback
 ]);
 
