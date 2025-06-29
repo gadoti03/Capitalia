@@ -76,6 +76,7 @@ export default function Capoluogo() {
         <section className="capoluogo-header">
           <h1 className="capoluogo-title">{citta}</h1>
 
+
           {username && (
             <button className="btn-inserisci-servizio" onClick={handleInserisciServizio}>
               INSERISCI UN SERVIZIO
