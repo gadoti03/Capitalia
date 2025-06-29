@@ -26,9 +26,9 @@ const capoluoghiRegione = [
   "Bari",
   "Cagliari",
   "Palermo",
-  "Catania",
   "Perugia",
-  "Trieste"
+  "Trieste",
+  "Napoli"
 ];
 
 function isValidCapoluogo(capoluogo) {
@@ -63,7 +63,7 @@ export default function Capoluogo() {
 
   return (
     <>
-      <Navbar backgroundStyle="panna" />
+      <Navbar backgroundStyle="verde" />
 
       <div className="page-container">
         <section className="capoluogo-header">

@@ -4,10 +4,9 @@ import './Navbar.css';
 import logo from '../../assets/logo_no_sfondo.png';
 import menu_icon from '../../assets/menu_icon.png';
 import profile_icon from '../../assets/profile_icon.webp';
-import logout_icon from '../../assets/logout_icon.png'
+import logout_icon from '../../assets/logout_icon.png';
 
 import { deleteCookie } from './../../utils/cookieUtils';
-
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = ({ backgroundStyle = 'transparent' }) => {
@@ -27,12 +26,12 @@ const Navbar = ({ backgroundStyle = 'transparent' }) => {
   };
 
   const handleGoToSignup = () => {
-    navigate('/autenticazione', { state: { activeTab: "signup" } });
+    navigate('/autenticazione', { state: { activeTab: 'signup' } });
     setIsOpen(false);
   };
 
   const handleGoToLogin = () => {
-    navigate('/autenticazione', { state: { activeTab: "login" } });
+    navigate('/autenticazione', { state: { activeTab: 'login' } });
     setIsOpen(false);
   };
 
@@ -71,17 +70,22 @@ const Navbar = ({ backgroundStyle = 'transparent' }) => {
 
   const username = getUsernameFromCookies();
 
-  // Scegli il background in base a backgroundStyle e sticky
-  // Se sticky, puoi forzare un colore (es. bianco panna) oppure mantenere la scelta
-  // Qui applico backgroundStyle solo se non sticky, altrimenti bianco panna.
-  // Modifica se vuoi un comportamento diverso.
-
+  // Gestione background color
   let backgroundColor = 'transparent';
 
   if (sticky && !isOpen) {
-    backgroundColor = '#fefcf8'; // bianco panna quando sticky
+    backgroundColor = '#fefcf8'; // Sticky: sempre panna
   } else {
-    backgroundColor = backgroundStyle === 'panna' ? '#fefcf8' : 'transparent';
+    switch (backgroundStyle) {
+      case 'panna':
+        backgroundColor = '#fefcf8';
+        break;
+      case 'verde':
+        backgroundColor = '#4CAF50'; // verde chiaro pastello
+        break;
+      default:
+        backgroundColor = 'transparent';
+    }
   }
 
   return (
@@ -120,7 +124,6 @@ const Navbar = ({ backgroundStyle = 'transparent' }) => {
               <Link to={`/profilo/${username}`} onClick={handleMenuClick}>
                 <img src={profile_icon} alt="Profilo" className="profile-icon" />
               </Link>
-              {/* Assuming you have a logout_icon imported */}
               <Link to="/Autenticazione" onClick={() => deleteCookie('username')}>
                 <img src={logout_icon} alt="Logout" className="profile-icon" />
               </Link>

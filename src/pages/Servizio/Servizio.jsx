@@ -27,7 +27,7 @@ const capoluoghiRegione = [
   "Bari",
   "Cagliari",
   "Palermo",
-  "Catania",
+  "Napoli",
   "Perugia",
   "Trieste"
 ];
