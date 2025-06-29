@@ -194,6 +194,18 @@
       "url_immagine_profilo": "/src/assets/patella.png",
       "biografia": "Ah...quanto mi piace la fessa...🤣🤣🤣🤣",
       "admin": true
+    },
+    {
+      "id": "2589",
+      "username": "mammaseitucapone",
+      "nome": "mammaseitu",
+      "cognome": "capone",
+      "email": "caponericchionissimo@capone.capo",
+      "password": "Capone2001!",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": "Ciao a TUTTI! SONO CAPONE! (CAPONE NORMALE NON CAPONE R.......)"
     }
   ],
   "servizi": [
@@ -745,6 +757,132 @@
         "https://example.com/img2.jpg"
       ],
       "username_proprietario": "fragabbani"
+    },
+    {
+      "id": "4cf7",
+      "nome": "Stadio",
+      "capoluogo": "Cagliari",
+      "collocazione": "Via belle arti 5",
+      "categoria": "Intrattenimento",
+      "feedback": [
+        {
+          "valutazione": 1,
+          "commento": "Claudio Cardillo ululava come un pazzo",
+          "data": "2025-06-29",
+          "ora": "20:26",
+          "username_proprietario": "fragabbani"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "fragabbani"
+    },
+    {
+      "id": "b043",
+      "nome": "Trattoria Tagliatelle da Pina",
+      "capoluogo": "Bologna",
+      "collocazione": "Via Indipendenza 1",
+      "categoria": "Ristorazione",
+      "feedback": [
+        {
+          "valutazione": 4,
+          "commento": "Buonissime tagliatelle!!",
+          "data": "2025-06-29",
+          "ora": "20:31",
+          "username_proprietario": "fragabbani"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "fragabbani"
+    },
+    {
+      "id": "0ffd",
+      "nome": "Trattoria Tagliatelle da Pina",
+      "capoluogo": "Bologna",
+      "collocazione": "Via Indipendenza 1",
+      "categoria": "Ristorazione",
+      "feedback": [
+        {
+          "valutazione": 4,
+          "commento": "Buonissime tagliatelle!!",
+          "data": "2025-06-29",
+          "ora": "20:31",
+          "username_proprietario": "fragabbani"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "fragabbani"
+    },
+    {
+      "id": "5a44",
+      "nome": "Olive all'Ascolana di Paola",
+      "capoluogo": "Ancona",
+      "collocazione": "Via Ruoti 6A",
+      "categoria": "Ristorazione",
+      "feedback": [
+        {
+          "valutazione": 4,
+          "commento": "Questa olive all'Ascolana sono una favola!\nMi fanno dire proprio... VIVA LA VITA!!\n",
+          "data": "2025-06-29",
+          "ora": "20:31",
+          "username_proprietario": "fragabbani"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "fragabbani"
+    },
+    {
+      "id": "62ea",
+      "nome": "Pecoraro",
+      "capoluogo": "Cagliari",
+      "collocazione": "Via Heidi 5",
+      "categoria": "Ristorazione",
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Ottime bistecche di ovini",
+          "data": "2025-06-29",
+          "ora": "20:33",
+          "username_proprietario": "FRANCOGIOIA"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "FRANCOGIOIA"
+    },
+    {
+      "id": "ef87",
+      "nome": "Museo archeologico di Aosta",
+      "capoluogo": "Aosta",
+      "collocazione": "Via Brimbeis 69",
+      "categoria": "Cultura",
+      "feedback": [
+        {
+          "valutazione": 3,
+          "commento": "Museo molto interessante pur se piccolo.",
+          "data": "2025-06-29",
+          "ora": "20:42",
+          "username_proprietario": "mammaseitucapone"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "mammaseitucapone"
     }
   ]
 }
