@@ -136,6 +136,11 @@ class Profilo extends Component {
     
 
     try {
+      // verifica che l'username rispetta i vincoli
+      if (! /^[A-Za-zÀ-ÿ]{1,32}$/.test(updatedData.username)){
+        throw new Error(`Errore salvataggio: non rispetta i vincoli di username`);
+      }
+
       // Verifica se posso cambiare username
       const resProfili = await fetch(`${apiDbUrl}/profili`);
       const listaProfili = await resProfili.json();

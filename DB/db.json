@@ -162,7 +162,7 @@
       "nome": "Francesco",
       "cognome": "Gabbani",
       "email": "fragabbani@gmail.com",
-      "password": "Paperino@03",
+      "password": "Paperino",
       "numero_servizi_pubblicati": 0,
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "/src/assets/gabbani.png",
@@ -170,17 +170,30 @@
       "admin": true
     },
     {
-    "id": "0dqe",
-    "username": "patella",
-    "nome": "Marco",
-    "cognome": "Patella",
-    "email": "marcopatella@gmail.com",
-    "password": "pass1234",
-    "numero_servizi_pubblicati": 0,
-    "numero_servizi_eliminati": 0,
-    "url_immagine_profilo": "/src/assets/patella.png",
-    "biografia": "Ah...quanto mi piace la fessa...🤣🤣🤣🤣",
-    "admin": true
+      "id": "5555",
+      "username": "0",
+      "nome": "Francesco",
+      "cognome": "Gabbani",
+      "email": "fragabbani@gmail.com",
+      "password": "0",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "/src/assets/gabbani.png",
+      "biografia": "Lasciate ogni speranza voi che entrate...ESTATE!!!",
+      "admin": true
+    },
+    {
+      "id": "0dqe",
+      "username": "patella",
+      "nome": "Marco",
+      "cognome": "Patella",
+      "email": "marcopatella@gmail.com",
+      "password": "pass1234",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "/src/assets/patella.png",
+      "biografia": "Ah...quanto mi piace la fessa...🤣🤣🤣🤣",
+      "admin": true
     }
   ],
   "servizi": [
@@ -648,6 +661,27 @@
         }
       ],
       "username_proprietario": "maria_p"
+    },
+    {
+      "id": "42a6",
+      "nome": "Peperoni Cruschi",
+      "capoluogo": "Potenza",
+      "collocazione": "via Roma 4",
+      "categoria": "Ristorazione",
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Molto Gustosi!!!",
+          "data": "2025-06-29",
+          "ora": "19:55",
+          "username_proprietario": "fragabbani"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "fragabbani"
     }
   ]
 }
