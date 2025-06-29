@@ -113,9 +113,15 @@ const Navbar = ({ backgroundStyle = 'transparent' }) => {
           ) : null}
 
           {isAuthenticated && username && (
-            <Link to={`/profilo/${username}`} onClick={handleMenuClick}>
-              <img src={profile_icon} alt="Profilo" className="profile-icon" />
-            </Link>
+            <>
+              <Link to={`/profilo/${username}`} onClick={handleMenuClick}>
+                <img src={profile_icon} alt="Profilo" className="profile-icon" />
+              </Link>
+              {/* Assuming you have a logout_icon imported */}
+              <Link to="/logout" onClick={handleLogout}> {/* You'll need a handleLogout function and a logout path */}
+                <img src={logout_icon} alt="Logout" className="logout-icon" />
+              </Link>
+            </>
           )}
         </div>
       </nav>
