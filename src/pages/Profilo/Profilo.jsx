@@ -7,6 +7,7 @@ const apiDbUrl = import.meta.env.VITE_API_DB_URL;
 import { getCookie, setCookie } from './../../utils/cookieUtils';
 
 import FeedbackProfilo from './../../Components/FeedbackProfilo/FeedbackProfilo'
+import Navbar from './../../Components/Navbar/Navbar';
 
 import ServizioProfilo from './../../Components/ServizioProfilo/ServizioProfilo'
 
@@ -211,6 +212,8 @@ class Profilo extends Component {
     }
 
     return (
+      <><Navbar backgroundStyle="panna"/> 
+      
       <div className="profile-page-wrapper">
         <article className="profile-card">
           {/* Sezione Intestazione con Cover e Info Principali */}
@@ -327,7 +330,9 @@ class Profilo extends Component {
           />
         )}
       </div>
+      </>
     );
+    
   }
 }
 

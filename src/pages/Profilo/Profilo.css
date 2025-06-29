@@ -5,9 +5,9 @@
 /* ------------------------------------- */
 :root {
   /* Colori di Base */
-  --color-primary-blue: #0a66c2; /* Blu primario LinkedIn */
-  --color-accent-blue: #0073b1; /* Blu per link/interazioni */
-  --color-hover-blue: #0059b3; /* Blu per hover */
+  --color-primary-green: #0a581b; /* Blu primario LinkedIn */
+  --color-accent-green: #0a581b; /* Blu per link/interazioni */
+  --color-hover-green: #0a581b; /* Blu per hover */
   --color-text-dark: #1f1f1f;   /* Testo principale scuro */
   --color-text-medium: #6a6a6a; /* Testo secondario / descrittivo */
   --color-text-light: #888888;  /* Testo di supporto */
@@ -55,11 +55,11 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--color-accent-blue);
+  color: var(--color-accent-green);
   transition: color 0.2s ease;
 }
 a:hover {
-  color: var(--color-hover-blue);
+  color: var(--color-hover-green);
   text-decoration: underline;
 }
 
@@ -96,7 +96,7 @@ a:hover {
   box-shadow: 0 0 0 1px var(--color-border-subtle), var(--shadow-sm);
 }
 .profile-loading {
-  color: var(--color-accent-blue);
+  color: var(--color-accent-green);
 }
 .profile-error {
   color: #c43232; /* Rosso per errori */
@@ -201,19 +201,29 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: var(--color-primary-blue);
+  background-color: var(--color-primary-green);
   color: var(--color-background-card);
-  border-color: var(--color-primary-blue);
+  border-color: var(--color-primary-green);
 }
 .btn-primary:hover {
-  background-color: var(--color-hover-blue);
-  border-color: var(--color-hover-blue);
+  background-color: var(--color-hover-green);
+  border-color: var(--color-hover-green);
+}
+
+.btn-success {
+  background-color: #0a581b; /* Verde brillante */
+  color: #ffffff;
+  border-color: #28a745;
+}
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-primary-blue);
-  border-color: var(--color-primary-blue);
+  color: var(--color-primary-green);
+  border-color: var(--color-primary-green);
 }
 .btn-secondary:hover {
   background-color: rgba(10, 102, 194, 0.08); /* Sottile sfondo blu chiaro */
@@ -261,7 +271,7 @@ a:hover {
 
 .icon-analytics {
   font-size: 36px;
-  color: var(--color-accent-blue);
+  color: var(--color-accent-green);
   margin-bottom: var(--spacing-sm);
   line-height: 1;
 }
@@ -326,7 +336,7 @@ a:hover {
 }
 
 .list-item:hover {
-  border-color: var(--color-accent-blue); /* Bordo blu all'hover */
+  border-color: var(--color-accent-green); /* Bordo blu all'hover */
   transform: translateY(-2px); /* Lieve spostamento verso l'alto */
 }
 
