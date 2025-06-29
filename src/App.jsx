@@ -5,8 +5,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Cartina from './Components/Cartina/Cartina';
 import ClassificaGlobale from './Components/ClassificaGlobale/ClassificaGlobale';
 // Questi due componenti non usati direttamente qui, lasciali se li userai in futuro
-import FeedbackProfilo from './Components/FeedbackProfilo/FeedbackProfilo';
-import ServizioProfilo from './Components/ServizioProfilo/ServizioProfilo';
+import Contatti from './Components/Contact/Contact';
 
 const App = () => {
   useEffect(() => {
@@ -31,6 +30,8 @@ const App = () => {
   }, [location]);
 
   return (
+    <>
+    
     <div style={{
       background: 'linear-gradient(to bottom, #7EC585, #4B975B)',
       minHeight: '100vh',
@@ -57,6 +58,8 @@ const App = () => {
         </div>
       </div>
     </div>
+    <Contatti/>
+    </>
   );
 };
 

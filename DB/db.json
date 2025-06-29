@@ -153,7 +153,7 @@
       "numero_servizi_pubblicati": 0,
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "/src/assets/gioia.png",
-      "biografia": "",
+      "biografia": "BWAH BWAH BWAH\n",
       "admin": true
     },
     {
@@ -206,6 +206,18 @@
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "",
       "biografia": "Ciao a TUTTI! SONO CAPONE! (CAPONE NORMALE NON CAPONE R.......)"
+    },
+    {
+      "id": "5b96",
+      "username": "cardills",
+      "nome": "Davide",
+      "cognome": "Cardillo",
+      "email": "davidecardillo@gmail.com",
+      "password": "PaoloXXX1",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": ""
     }
   ],
   "servizi": [

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Capoluogo.css';
 
+import { getCookie } from './../../utils/cookieUtils';
+
 const apiDbUrl = import.meta.env.VITE_API_DB_URL;
 
 import Navbar from './../../Components/Navbar/Navbar';
@@ -28,12 +30,7 @@ export default function Capoluogo() {
   const [categoriaSelezionata, setCategoriaSelezionata] = useState('Cultura');
   const [servizi, setServizi] = useState([]);
 
-  const getUsernameFromCookies = () => {
-    const match = document.cookie.match(/(?:^|;\s*)username=([^;]+)/);
-    return match ? decodeURIComponent(match[1]) : null;
-  };
-
-  const username = getUsernameFromCookies();
+  const username = getCookie();
 
   useEffect(() => {
     if (!isValidCapoluogo(citta)) {
@@ -50,8 +47,8 @@ export default function Capoluogo() {
 
         const serviziFiltrati = data.filter(
           (s) =>
-            s.capoluogo.toLowerCase() === citta.toLowerCase() &&
-            s.categoria === categoriaSelezionata
+            s.capoluogo.toLowerCase() == citta.toLowerCase() &&
+            s.categoria.toLowerCase() == categoriaSelezionata.toLowerCase()
         );
 
         setServizi(serviziFiltrati);
@@ -62,7 +59,7 @@ export default function Capoluogo() {
     };
 
     fetchServizi();
-  }, [citta, categoriaSelezionata, navigate]);
+  }, [categoriaSelezionata]);
 
   const handleInserisciServizio = () => {
     navigate(`/servizio/${citta}`);
