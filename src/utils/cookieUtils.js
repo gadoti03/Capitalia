@@ -16,3 +16,20 @@ export function getCookie(name) {
   }
   return null; // Cookie non trovato
 }
+
+export function setCookie(name, value, days = 1, path = '/') {
+  // Importante: Controlla se document è disponibile (utile per Server-Side Rendering)
+  if (typeof document === 'undefined') {
+    return;
+  }
+
+  let expires = '';
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Converte i giorni in millisecondi
+    expires = "; expires=" + date.toUTCString();
+  }
+
+  // Imposta il cookie con nome, valore, scadenza e path
+  document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=" + path;
+}

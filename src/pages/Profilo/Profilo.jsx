@@ -4,7 +4,7 @@ import "./Profilo.css"; // Assicurati che questo sia il percorso corretto
 
 const apiDbUrl = import.meta.env.VITE_API_DB_URL;
 
-import { getCookie } from './../../utils/cookieUtils';
+import { getCookie, setCookie } from './../../utils/cookieUtils';
 
 import FeedbackProfilo from './../../Components/FeedbackProfilo/FeedbackProfilo'
 
@@ -121,17 +121,33 @@ class Profilo extends Component {
   };
 
   // Funzione per gestire il salvataggio delle modifiche dal banner
-  handleSaveChanges = async (updatedData) => {
-    const { profilo } = this.state;
+  handleSaveChanges = async (updatedData) => {    
+    const { profilo } = this.state; // updated
     const { navigate } = this.props;
+
+    console.log(updatedData)
 
     if (!profilo || !profilo.id) {
       console.error("ID del profilo non disponibile per l'aggiornamento.");
       alert("Impossibile aggiornare il profilo: ID non trovato.");
       return;
     }
+    
 
     try {
+      // Verifica se posso cambiare username
+      const resProfili = await fetch(`${apiDbUrl}/profili`);
+      const listaProfili = await resProfili.json();
+
+      // Verifico che l'username non esista già
+      for (let i = 0; i < listaProfili.length; i++) {
+        console.log(listaProfili[i].username, profilo.username, listaProfili[i].id, profilo.id)
+        if (listaProfili[i].username === updatedData.username && listaProfili[i].id != profilo.id){
+          console.log("ahahahhahahahhahahhaha")
+          throw new Error(`Errore salvataggio: username già esistente`);
+        }
+      }
+
       // Effettua la chiamata PATCH al tuo backend per aggiornare il profilo
       const response = await fetch(`${apiDbUrl}/profili/${profilo.id}`, {
         method: 'PATCH', // PATCH è più appropriato per aggiornamenti parziali
@@ -146,6 +162,10 @@ class Profilo extends Component {
         // Se la risposta non è OK, tenta di leggere il messaggio di errore dal backend
         const errorData = await response.json().catch(() => ({ message: 'Errore sconosciuto' }));
         throw new Error(`Errore salvataggio: ${response.status} - ${errorData.message || response.statusText}`);
+      } else {
+        // Se cambio username cambia cookie
+        console.log("setto username")
+        setCookie("username", updatedData.username)
       }
 
       const updatedProfiloFromServer = await response.json();
@@ -156,7 +176,6 @@ class Profilo extends Component {
         profilo: updatedProfiloFromServer,
         showModificaBanner: false
       });
-      alert("Profilo aggiornato con successo!");
 
       // Se l'username è stato modificato, potresti voler aggiornare il cookie o reindirizzare
       // Questo dipende dalla tua logica di autenticazione e gestione degli username.
