@@ -33,3 +33,13 @@ export function setCookie(name, value, days = 1, path = '/') {
   // Imposta il cookie con nome, valore, scadenza e path
   document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=" + path;
 }
+
+export function deleteCookie(name, path = '/') {
+  // Importante: Controlla se document è disponibile (utile per Server-Side Rendering)
+  if (typeof document === 'undefined') {
+    return;
+  }
+
+  // Imposta il cookie con una scadenza passata per forzarne l'eliminazione
+  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=" + path + ";";
+}

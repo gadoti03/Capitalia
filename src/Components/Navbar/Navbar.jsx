@@ -4,6 +4,9 @@ import './Navbar.css';
 import logo from '../../assets/logo_no_sfondo.png';
 import menu_icon from '../../assets/menu_icon.png';
 import profile_icon from '../../assets/profile_icon.webp';
+import logout_icon from '../../assets/logout_icon.png'
+
+import { deleteCookie } from './../../utils/cookieUtils';
 
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -118,8 +121,8 @@ const Navbar = ({ backgroundStyle = 'transparent' }) => {
                 <img src={profile_icon} alt="Profilo" className="profile-icon" />
               </Link>
               {/* Assuming you have a logout_icon imported */}
-              <Link to="/logout" onClick={handleLogout}> {/* You'll need a handleLogout function and a logout path */}
-                <img src={logout_icon} alt="Logout" className="logout-icon" />
+              <Link to="/Autenticazione" onClick={() => deleteCookie('username')}>
+                <img src={logout_icon} alt="Logout" className="profile-icon" />
               </Link>
             </>
           )}
