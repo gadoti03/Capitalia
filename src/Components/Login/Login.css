@@ -1,49 +1,363 @@
-/* Login.css */
+/* Profilo.css - Versione Professionale e a Colonne */
 
-.login-title {
+/* Colori e Font */
+:root {
+  --linkedin-blue: #0a66c2; /* Blu più profondo di LinkedIn */
+  --linkedin-action-blue: #0073b1; /* Blu per azioni/link */
+  --text-primary: #1d2226;   /* Nero carbone per titoli e testo principale */
+  --text-secondary: #666666; /* Grigio scuro per testo secondario */
+  --background-light: #f4f2ee; /* Sfondo pagina chiaro, caldo */
+  --card-background: #ffffff;  /* Sfondo delle card */
+  --border-color: #e0e0e0;     /* Colore del bordo sottile */
+  --shadow-subtle: rgba(0, 0, 0, 0.08); /* Ombra molto leggera */
+  --shadow-medium: rgba(0, 0, 0, 0.12); /* Ombra leggermente più pronunciata */
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.profilo-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.profilo-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--border-color), 0 2px 5px var(--shadow-subtle); /* Bordo e ombra leggera */
+  width: 100%;
+  max-width: 900px; /* Aumentiamo la larghezza per le due colonne */
+  margin: 0 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Messaggi di stato */
+.profilo-loading, .profilo-error {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: var(--linkedin-action-blue);
+  background-color: var(--card-background);
+  border-radius: 8px;
+  margin: 24px auto;
+  max-width: 600px;
+  box-shadow: 0 0 0 1px var(--border-color), 0 2px 5px var(--shadow-subtle);
+}
+
+.profilo-error {
+  color: #c43232;
+}
+
+/* SEZIONE INTESTAZIONE PROFILO (parte superiore) */
+.profilo-intestazione {
+  position: relative;
+  padding: 24px; /* Padding interno */
+  padding-top: 0; /* Rimozione padding top per un'eventuale cover */
+}
+
+/* Immagine di copertina (Opzionale - da aggiungere nel JSX se necessario) */
+.profilo-cover {
+  height: 180px; /* Altezza della cover */
+  background-color: #dce6f1; /* Colore placeholder */
+  /* background-image: url('https://via.placeholder.com/1500x180?text=Immagine+di+Copertina'); */
+  background-size: cover;
+  background-position: center;
+  margin: 0 -24px 0 -24px; /* Estende ai bordi della card */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative; /* Per z-index sotto l'immagine profilo */
+  z-index: 1;
+}
+
+.profilo-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--card-background); /* Bordo bianco per staccare */
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1); /* Bordo sottile grigio */
+  position: relative;
+  z-index: 2; /* Sopra la cover */
+  margin-top: -90px; /* Sovrapposizione sulla cover */
+  margin-bottom: 20px;
+  background-color: #fcfcfc; /* Sfondo per immagini non caricate */
+}
+
+.profilo-dati {
+  padding-bottom: 20px; /* Spazio prima della linea orizzontale */
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px; /* Spazio dopo la linea */
+}
+
+.profilo-username {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.profilo-bio {
+  font-size: 18px;
+  color: var(--text-primary); /* La bio è importante, colore primario */
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.profilo-dettagli-contatto, .profilo-follower {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.profilo-dettagli-contatto a {
+  color: var(--linkedin-action-blue);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.profilo-dettagli-contatto a:hover {
+  text-decoration: underline;
+}
+
+/* SEZIONE STATISTICHE / ANALYTICS */
+.profilo-statistiche {
+  display: flex;
+  justify-content: space-around; /* Spazio uniforme */
+  padding: 24px;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 20px; /* Spazio tra gli elementi */
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1; /* Distribuisce lo spazio */
+  min-width: 140px; /* Larghezza minima per le box */
+  padding: 10px 5px;
+}
+
+.stat-box span {
+  font-size: 36px; /* Icone grandi e impattanti */
+  color: var(--linkedin-action-blue);
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.stat-box strong {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.stat-box div {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* NUOVA STRUTTURA: DUE COLONNE */
+.profilo-content-columns {
+  display: flex;
+  flex-wrap: wrap; /* Permette alle colonne di impilarsi su schermi piccoli */
+  padding: 24px; /* Padding per l'intera sezione delle colonne */
+  gap: 24px; /* Spazio tra le colonne */
+}
+
+.profilo-column {
+  flex: 1; /* Ogni colonna occupa metà dello spazio disponibile */
+  min-width: 300px; /* Larghezza minima prima di impilarsi */
+  background-color: var(--card-background); /* Sfondo per le colonne (se necessario, altrimenti possono essere trasparenti) */
+  /* box-shadow: 0 0 0 1px var(--border-color); // Se vuoi un bordo separato per ogni colonna */
+  border-radius: 8px; /* Se vuoi arrotondare i bordi delle colonne stesse */
+}
+
+/* Le singole sezioni all'interno delle colonne */
+.profilo-section {
+  padding-bottom: 24px; /* Padding interno della sezione */
+  /* Rimuovi border-bottom qui se vuoi che le colonne siano uniche e non sezioni separate all'interno */
+}
+
+.profilo-section:last-child {
+    border-bottom: none; /* Rimuovi bordo dall'ultima sezione all'interno di una colonna */
+}
+
+
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color); /* Sottolineatura per i titoli delle sezioni */
+  padding-bottom: 10px;
+}
+
+.profilo-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profilo-list-item {
+  background-color: #fcfcfc; /* Sfondo leggermente diverso per gli item */
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: var(--text-primary);
+  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Ombra sottile per ogni item */
+}
+
+.profilo-list-item:hover {
+  box-shadow: 0 2px 8px var(--shadow-medium);
+  border-color: var(--linkedin-action-blue); /* Bordo blu all'hover */
+}
+
+.profilo-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.profilo-vuoto {
+  font-style: italic;
+  color: var(--text-secondary);
+  padding: 20px;
+  text-align: center;
+  background-color: #fefefe;
+  border: 1px dashed var(--border-color);
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* MEDIA QUERIES per la Responsività */
+@media (max-width: 992px) { /* Tablet orizzontale */
+  .profilo-card {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 768px) { /* Tablet verticale e mobile */
+  .profilo-card {
+    margin: 0; /* Occupa tutta la larghezza su mobile */
+    border-radius: 0;
+    box-shadow: none; /* Rimuovi ombra e bordi su full-width mobile */
+  }
+
+  .profilo-intestazione, .profilo-statistiche, .profilo-content-columns {
+    padding: 16px;
+  }
+
+  .profilo-cover {
+    height: 150px;
+    margin: 0 -16px;
+    border-radius: 0;
+  }
+
+  .profilo-img {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-bottom: 15px;
+  }
+
+  .profilo-username {
+    font-size: 28px;
+  }
+
+  .profilo-bio {
+    font-size: 16px;
+  }
+
+  .profilo-statistiche {
+    flex-direction: column; /* Impila le statistiche */
+    gap: 10px;
+  }
+
+  .stat-box {
+    min-width: unset;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color); /* Separatore tra le box */
+  }
+  .stat-box:last-child {
+    border-bottom: none;
+  }
+
+  .profilo-content-columns {
+    flex-direction: column; /* Impila le colonne su schermi piccoli */
+    gap: 16px;
+  }
+
+  .profilo-column {
+    min-width: unset; /* Rimuovi il min-width */
+    box-shadow: 0 0 0 1px var(--border-color), 0 1px 3px var(--shadow-subtle); /* Aggiungi un'ombra alla singola colonna */
+    padding: 16px; /* Padding interno della colonna */
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .profilo-list-item {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) { /* Smartphone stretti */
+  .profilo-intestazione {
     text-align: center;
-    margin-bottom: 20px;
+  }
+
+  .profilo-img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profilo-username {
     font-size: 24px;
-    color: #0a581b;
   }
-  
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+  .profilo-bio {
+    font-size: 15px;
   }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
+
+  .profilo-statistiche {
+    padding: 12px;
   }
-  
-  .form-group label {
-    font-weight: bold;
-    margin-bottom: 5px;
+
+  .stat-box span {
+    font-size: 30px;
   }
-  
-  .form-group input {
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+  .stat-box strong {
+    font-size: 20px;
+  }
+  .stat-box div {
     font-size: 14px;
   }
-  
-  .login-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #0a581b;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+
+  .profilo-content-columns {
+    padding: 12px;
   }
-  
-  .login-button:hover {
-    background-color: #052e0e;
+
+  .profilo-column {
+    padding: 12px;
   }
-  
+}

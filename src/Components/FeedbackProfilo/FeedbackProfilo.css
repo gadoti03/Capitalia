@@ -1,0 +1,108 @@
+.feedback-container {
+  max-width: 500px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2e2e2e;
+  user-select: text;
+}
+
+.feedback-service-city {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.feedback-service {
+  background-color: #d8f0d8;
+  color: #2f5d2f;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  user-select: text;
+}
+
+.feedback-city {
+  font-style: italic;
+  color: #7a7a7a;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.feedback-owner {
+  padding: 4px 14px;
+  border-radius: 12px;
+  color: #3a6f41;
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: text;
+  white-space: nowrap;
+}
+
+.feedback-stars {
+  display: flex;
+  gap: 4px;
+  font-size: 1.8rem;
+  cursor: default;
+  user-select: none;
+}
+
+.star {
+  color: #c4c4c4;
+  transition: color 0.25s ease;
+}
+
+.star.filled {
+  color: #fbc02d;
+}
+
+.star:hover,
+.star.filled:hover {
+  color: #ffde59;
+}
+
+.feedback-comment {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #444444;
+  margin-bottom: 18px;
+  user-select: text;
+}
+
+.feedback-datetime {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #8a8a8a;
+}
+
+.icon-calendar {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.75;
+  user-select: none;
+}
+
+.feedback-service-city {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+
+  padding-bottom: 6px;
+  border-bottom: 1px solid #d0d8d0; /* linea leggera verde-grigia */
+}
