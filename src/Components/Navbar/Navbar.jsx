@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 
 import logo from '../../assets/logo_no_sfondo.png';
-import menu_icon from '../../assets/menu_icon.png';
 import profile_icon from '../../assets/profile_icon.webp';
 import logout_icon from '../../assets/logout_icon.png';
 
@@ -100,12 +99,6 @@ const Navbar = ({ backgroundStyle = 'transparent' }) => {
           </Link>
         </div>
 
-        <img
-          src={menu_icon}
-          alt="Menu Icon"
-          className="menu_icon"
-          onClick={handleMenuClick}
-        />
 
         <div className={`navbar-right ${isOpen ? 'open' : ''}`}>
           {!isAuthenticated ? (
