@@ -2,33 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Capoluogo.css';
 
+const apiDbUrl = import.meta.env.VITE_API_DB_URL;
+
 import Navbar from './../../Components/Navbar/Navbar';
 import ClassificaLocale from './../../Components/ClassificaLocale/ClassificaLocale';
-import ServizioProfilo from './../../Components/ServizioProfilo/ServizioProfilo';
+import ServizioCapoluogo from './../../Components/ServizioCapoluogo/ServizioCapoluogo';
 
 const categorie = ['Cultura', 'Ristorazione', 'Ospitalità', 'Trasporto', 'Intrattenimento'];
 
 const capoluoghiRegione = [
-  "Aosta",
-  "Torino",
-  "Milano",
-  "Trento",
-  "Venezia",
-  "Genova",
-  "Bologna",
-  "Firenze",
-  "Ancona",
-  "Campobasso",
-  "Roma",
-  "L'Aquila",
-  "Potenza",
-  "Catanzaro",
-  "Bari",
-  "Cagliari",
-  "Palermo",
-  "Perugia",
-  "Trieste",
-  "Napoli"
+  "Aosta", "Torino", "Milano", "Trento", "Venezia", "Genova", "Bologna", "Firenze",
+  "Ancona", "Campobasso", "Roma", "L'Aquila", "Potenza", "Catanzaro", "Bari",
+  "Cagliari", "Palermo", "Perugia", "Trieste", "Napoli"
 ];
 
 function isValidCapoluogo(capoluogo) {
@@ -38,17 +23,10 @@ function isValidCapoluogo(capoluogo) {
 
 export default function Capoluogo() {
   const { citta } = useParams();
-
   const navigate = useNavigate();
 
-  // verifico che il capoluogo esiste
-  useEffect(() => {
-    if (!isValidCapoluogo(citta)) {
-      navigate('/');
-    }
-  }, [citta, navigate]);
-  
   const [categoriaSelezionata, setCategoriaSelezionata] = useState('Cultura');
+  const [servizi, setServizi] = useState([]);
 
   const getUsernameFromCookies = () => {
     const match = document.cookie.match(/(?:^|;\s*)username=([^;]+)/);
@@ -56,6 +34,35 @@ export default function Capoluogo() {
   };
 
   const username = getUsernameFromCookies();
+
+  useEffect(() => {
+    if (!isValidCapoluogo(citta)) {
+      navigate('/');
+      return;
+    }
+
+    const fetchServizi = async () => {
+      try {
+        const res = await fetch(`${apiDbUrl}/servizi`);        
+        const data = await res.json();
+
+        console.log(data)
+
+        const serviziFiltrati = data.filter(
+          (s) =>
+            s.capoluogo.toLowerCase() === citta.toLowerCase() &&
+            s.categoria === categoriaSelezionata
+        );
+
+        setServizi(serviziFiltrati);
+
+      } catch (err) {
+        console.error('Errore durante il fetch dei servizi:', err);
+      }
+    };
+
+    fetchServizi();
+  }, [citta, categoriaSelezionata, navigate]);
 
   const handleInserisciServizio = () => {
     navigate(`/servizio/${citta}`);
@@ -95,7 +102,22 @@ export default function Capoluogo() {
             </nav>
 
             <h2 className="servizi-list-title">LISTA DEI SERVIZI</h2>
-            <ServizioProfilo capoluogo={citta} categoria={categoriaSelezionata} />
+
+            {servizi.length === 0 ? (
+              <p className="no-servizi-msg">Nessun servizio trovato in questa categoria.</p>
+            ) : (
+              servizi.map((servizio, idx) => (
+                <ServizioCapoluogo
+                  key={servizio._id || idx}
+                  nome={servizio.nome}
+                  capoluogo={servizio.capoluogo}
+                  collocazione={servizio.collocazione}
+                  categoria={servizio.categoria}
+                  lista_immagini={servizio.lista_immagini}
+                  username_proprietario={servizio.username_proprietario}
+                />
+              ))
+            )}
           </section>
 
           {/* Colonna classifica */}

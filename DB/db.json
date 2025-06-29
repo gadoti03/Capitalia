@@ -192,7 +192,7 @@
       "numero_servizi_pubblicati": 0,
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "/src/assets/patella.png",
-      "biografia": "Ah...quanto mi piace la fessa...🤣🤣🤣🤣",
+      "biografia": "Amo il pattern decorator\n",
       "admin": true
     },
     {
@@ -883,6 +883,132 @@
         "https://example.com/img2.jpg"
       ],
       "username_proprietario": "mammaseitucapone"
+    },
+    {
+      "id": "379c",
+      "nome": "Salamino Paesano di Piero",
+      "capoluogo": "Potenza",
+      "collocazione": "Via Satriano 641",
+      "categoria": "Ristorazione",
+      "feedback": [
+        {
+          "valutazione": 2,
+          "commento": "Salame (o salsiccia) paesano abbastanza buono, peccato non fosse piccante...",
+          "data": "2025-06-29",
+          "ora": "21:08",
+          "username_proprietario": "mammaseitucapone"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "mammaseitucapone"
+    },
+    {
+      "id": "2686",
+      "nome": "Bella Vegaz",
+      "capoluogo": "Bologna",
+      "collocazione": "Via Liguria 26",
+      "categoria": "Ospitalità",
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Il saluto + ospitale ke ci sia!!",
+          "data": "2025-06-29",
+          "ora": "21:10",
+          "username_proprietario": "mammaseitucapone"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "mammaseitucapone"
+    },
+    {
+      "id": "0ca9",
+      "nome": "Stadio Diego Armando Maradona",
+      "capoluogo": "Napoli",
+      "collocazione": "Via Jacopo de Gennaro, 80125 Napoli",
+      "categoria": "Intrattenimento",
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Concerto bellissimo!",
+          "data": "2025-06-29",
+          "ora": "21:15",
+          "username_proprietario": "patella"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "patella"
+    },
+    {
+      "id": "a85d",
+      "nome": "Polignano A Mare",
+      "capoluogo": "Bari",
+      "collocazione": "Via Case Sparse",
+      "categoria": "Cultura",
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Mare stupendo, cristallino!!!",
+          "data": "2025-06-29",
+          "ora": "21:18",
+          "username_proprietario": "patella"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "patella"
+    },
+    {
+      "id": "b316",
+      "nome": "Polignano A Mare",
+      "capoluogo": "Bari",
+      "collocazione": "Via Case Sparse",
+      "categoria": "Cultura",
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Mare stupendo, cristallino!!!",
+          "data": "2025-06-29",
+          "ora": "21:18",
+          "username_proprietario": "patella"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "patella"
+    },
+    {
+      "id": "020a",
+      "nome": "Hotel Internazionale",
+      "capoluogo": "Bologna",
+      "collocazione": " Via dell'Indipendenza, 60, 40121 ",
+      "categoria": "Ospitalità",
+      "feedback": [
+        {
+          "valutazione": 2,
+          "commento": "Hotel sporco e troppo costoso!",
+          "data": "2025-06-29",
+          "ora": "21:21",
+          "username_proprietario": "patella"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "patella"
     }
   ]
 }

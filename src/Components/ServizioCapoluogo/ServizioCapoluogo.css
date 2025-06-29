@@ -1,0 +1,117 @@
+.sc-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sc-carousel {
+  position: relative;
+  background: #111;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sc-img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  user-select: none;
+  border-radius: 0;
+}
+
+.sc-img-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.75);
+  border: none;
+  width: 36px;
+  height: 56px;
+  cursor: pointer;
+  color: #222;
+  transition: background-color 0.2s ease;
+  user-select: none;
+  border-radius: 0 8px 8px 0;
+}
+
+.sc-img-btn:hover {
+  background: rgba(255,255,255,0.95);
+}
+
+.sc-prev {
+  left: 10px;
+  border-radius: 0 8px 8px 0;
+}
+
+.sc-next {
+  right: 10px;
+  border-radius: 8px 0 0 8px;
+}
+
+.sc-arrow-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.sc-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  align-items: center;
+}
+
+.sc-info-left p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+.sc-nome {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #116611;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #116611;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.sc-info-right {
+  display: flex;
+  gap: 18px;
+}
+
+.sc-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #116611;
+  transition: color 0.2s ease;
+}
+
+.sc-icon-btn:hover {
+  color: #44aa44;
+}
+
+.sc-feedback-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.sc-no-img {
+  padding: 20px;
+  font-style: italic;
+  color: #888;
+  text-align: center;
+}
