@@ -361,3 +361,21 @@ body {
     padding: 12px;
   }
 }
+
+.login-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color:  #0a581b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.login-button:hover {
+  background-color: #052e0e;
+}
