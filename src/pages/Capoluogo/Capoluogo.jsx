@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Capoluogo.css';
 
@@ -8,9 +8,46 @@ import ServizioProfilo from './../../Components/ServizioProfilo/ServizioProfilo'
 
 const categorie = ['Cultura', 'Ristorazione', 'Ospitalità', 'Trasporto', 'Intrattenimento'];
 
+const capoluoghiRegione = [
+  "Aosta",
+  "Torino",
+  "Milano",
+  "Trento",
+  "Venezia",
+  "Genova",
+  "Bologna",
+  "Firenze",
+  "Ancona",
+  "Campobasso",
+  "Roma",
+  "L'Aquila",
+  "Potenza",
+  "Catanzaro",
+  "Bari",
+  "Cagliari",
+  "Palermo",
+  "Catania",
+  "Perugia",
+  "Trieste"
+];
+
+function isValidCapoluogo(capoluogo) {
+  if (!capoluogo) return false;
+  return capoluoghiRegione.some(c => c.toLowerCase() === capoluogo.toLowerCase());
+}
+
 export default function Capoluogo() {
   const { citta } = useParams();
+
   const navigate = useNavigate();
+
+  // verifico che il capoluogo esiste
+  useEffect(() => {
+    if (!isValidCapoluogo(citta)) {
+      navigate('/');
+    }
+  }, [citta, navigate]);
+  
   const [categoriaSelezionata, setCategoriaSelezionata] = useState('Cultura');
 
   const getUsernameFromCookies = () => {
