@@ -64,8 +64,23 @@ class Profilo extends Component {
         throw new Error(`HTTP error! status: ${resServizi.status}`);
       }
       const tuttiServizi = await resServizi.json();
-      const serviziUtente = tuttiServizi.filter((s) => s.username === username);
-      const feedbackUtente = serviziUtente.flatMap((s) => s.feedback || []);
+
+      // ottengo tutti i servizi di {username}
+      const serviziUtente = tuttiServizi.filter((s) => s.username_proprietario === username);
+      // ottengo tutti i feedback di {username}
+      let feedbackFiltrati = [];
+
+      datiServizi.forEach(servizio => {
+        if (servizio.feedback && Array.isArray(servizio.feedback) && servizio.feedback.length > 0) {
+          servizio.feedback.forEach(singoloFeedback => {
+            if (singoloFeedback.username_proprietario === username) {
+              feedbackFiltrati.push(singoloFeedback);
+            }
+          });
+        }
+      });
+
+      console.log(feedbackFiltrati)
 
       this.setState({
         servizi: serviziUtente,
@@ -118,7 +133,7 @@ class Profilo extends Component {
                 </p>
               </div>
               <div className="profile-action-buttons">
-                <button className="btn btn-primary">Mofifica Profilo</button>
+                <button className="btn btn-primary">Modifica Profilo</button>
               </div>
             </div>
           </header>
@@ -146,12 +161,19 @@ class Profilo extends Component {
           <main className="profile-content-grid">
             {/* Colonna Sinistra: Servizi */}
             <section className="profile-content-column">
-              <h2 className="section-title">Servizi offerti</h2>
+              <h2 className="section-title">Servizi pubblicati</h2>
               {servizi.length > 0 ? (
                 <ul className="content-list">
                   {servizi.map((s, i) => (
                     <li key={i} className="list-item">
-                      {s.titolo || `Servizio #${i + 1}`}
+                      <ServizioProfilo 
+                        nome = {s.nome}
+                        capoluogo = {s.capoluogo}
+                        collocazione = {s.collocazione}
+                        categoria = {s.categoria}
+                        lista_immagini = {s.lista_immagini}
+                        username_proprietario = {s.username_proprietario}
+                      />
                     </li>
                   ))}
                 </ul>

@@ -284,7 +284,7 @@ a:hover {
 /* ------------------------------------- */
 .profile-content-grid {
   display: grid; /* Utilizzo di CSS Grid per maggiore controllo */
-  grid-template-columns: 2fr 1fr; /* Colonna sinistra più larga (2/3), destra (1/3) */
+  grid-template-columns: 1fr; /* Una sola colonna */
   gap: var(--spacing-lg);
   padding: var(--spacing-lg);
   background-color: var(--color-background-page); /* Sfondo leggermente diverso per questa area */
@@ -316,7 +316,6 @@ a:hover {
 
 .list-item {
   background-color: var(--color-background-card);
-  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-sm);
   padding: var(--spacing-md) var(--spacing-lg);
   margin-bottom: var(--spacing-sm);
@@ -324,11 +323,9 @@ a:hover {
   color: var(--color-text-dark);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  box-shadow: var(--shadow-sm); /* Ombra sottile per gli item */
 }
 
 .list-item:hover {
-  box-shadow: var(--shadow-md); /* Ombra più pronunciata all'hover */
   border-color: var(--color-accent-blue); /* Bordo blu all'hover */
   transform: translateY(-2px); /* Lieve spostamento verso l'alto */
 }
