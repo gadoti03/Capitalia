@@ -750,8 +750,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/ganci.jpg"
       ],
       "username_proprietario": "fragabbani"
     },
@@ -771,8 +770,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/stadioCagliari.jpg"
       ],
       "username_proprietario": "fragabbani"
     },
@@ -792,29 +790,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
-      ],
-      "username_proprietario": "fragabbani"
-    },
-    {
-      "id": "0ffd",
-      "nome": "Trattoria Tagliatelle da Pina",
-      "capoluogo": "Bologna",
-      "collocazione": "Via Indipendenza 1",
-      "categoria": "Ristorazione",
-      "feedback": [
-        {
-          "valutazione": 4,
-          "commento": "Buonissime tagliatelle!!",
-          "data": "2025-06-29",
-          "ora": "20:31",
-          "username_proprietario": "fragabbani"
-        }
-      ],
-      "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/trattoriaPina.jpg"
       ],
       "username_proprietario": "fragabbani"
     },
@@ -834,8 +810,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/oliveAscolane.jpg"
       ],
       "username_proprietario": "fragabbani"
     },
@@ -855,8 +830,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/ristorantePecoraro.jpg"
       ],
       "username_proprietario": "FRANCOGIOIA"
     },
@@ -939,8 +913,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/concertoMaradona.jpg"
       ],
       "username_proprietario": "patella"
     },
@@ -960,29 +933,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
-      ],
-      "username_proprietario": "patella"
-    },
-    {
-      "id": "b316",
-      "nome": "Polignano A Mare",
-      "capoluogo": "Bari",
-      "collocazione": "Via Case Sparse",
-      "categoria": "Cultura",
-      "feedback": [
-        {
-          "valutazione": 5,
-          "commento": "Mare stupendo, cristallino!!!",
-          "data": "2025-06-29",
-          "ora": "21:18",
-          "username_proprietario": "patella"
-        }
-      ],
-      "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/polignanoAMare.jpeg"
       ],
       "username_proprietario": "patella"
     },
@@ -1002,8 +953,7 @@
         }
       ],
       "lista_immagini": [
-        "https://example.com/img1.jpg",
-        "https://example.com/img2.jpg"
+        "/src/assets/hotelInternazionaleBologna.jpg"
       ],
       "username_proprietario": "patella"
     }
