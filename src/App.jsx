@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-
-import { Link as ScrollLink } from 'react-scroll'
-
 import { useLocation } from 'react-router-dom';
-import Navbar from './Components/Navbar/Navbar';
-import { Helmet, HelmetProvider } from 'react-helmet-async'; // 👈 Importa Helmet
 
-import FeedbackProfilo from './Components/FeedbackProfilo/FeedbackProfilo'
-import ServizioProfilo from './Components/ServizioProfilo/ServizioProfilo'
+import Navbar from './Components/Navbar/Navbar';
+import Cartina from './Components/Cartina/Cartina';
+import ClassificaGlobale from './Components/ClassificaGlobale/ClassificaGlobale';
+// Questi due componenti non usati direttamente qui, lasciali se li userai in futuro
+import FeedbackProfilo from './Components/FeedbackProfilo/FeedbackProfilo';
+import ServizioProfilo from './Components/ServizioProfilo/ServizioProfilo';
 
 const App = () => {
   useEffect(() => {
@@ -15,20 +14,7 @@ const App = () => {
   }, []);
 
   const location = useLocation();
-  const offset = -130; // Modifica questo valore per regolare l'offset
-
-  const datiServizio = {
-    nome: "Cinema Massimo",
-    capoluogo: "Torino",
-    collocazione: "Piemonte",
-    categoria: "INTRATTENIMENTO",
-    lista_immagini: [
-      "/src/assets/1724930121345.jpg",
-      "/src/assets/1724930121382.jpg",
-      "/src/assets/1724930121416.jpg",
-    ],
-    username_proprietario: "svolgo92",
-  };
+  const offset = -130;
 
   useEffect(() => {
     if (location.hash) {
@@ -45,29 +31,34 @@ const App = () => {
   }, [location]);
 
   return (
-    <>
-     <Navbar />
-      nulla cosmico
-    <FeedbackProfilo
-      proprietario="Mario Rossi"
-      servizio="Taglio capelli"
-      citta="Torino"
-      valutazione={5}
-      commento="Ottimo servizio, consigliatissimo!"
-      data="28/06/2025"
-      ora="14:45"
-    />
+    <div style={{
+      background: 'linear-gradient(to bottom, #7EC585, #4B975B)',
+      minHeight: '100vh',
+      width: '100%',
+      boxSizing: 'border-box',
+    }}>
+      <Navbar />
 
-      <ServizioProfilo {...datiServizio} />
-      <ServizioProfilo {...datiServizio} />
-      <ServizioProfilo {...datiServizio} />
-      <ServizioProfilo {...datiServizio} />
-      <ServizioProfilo {...datiServizio} />
-      <ServizioProfilo {...datiServizio} />
-      <ServizioProfilo {...datiServizio} />
-      <ServizioProfilo {...datiServizio} />
-    </>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        padding: '30px 60px',
+        gap: '40px',
+        flexWrap: 'wrap',  // <--- Modifica qui: permette di andare a capo su schermi piccoli
+        width: '100%',
+        boxSizing: 'border-box',
+      }}>
+        <div style={{ flexBasis: '40%', minWidth: '300px' }}>
+          <Cartina />
+        </div>
+
+        <div style={{ flexBasis: '40%', minWidth: '350px', textAlign: 'right' }}>
+          <ClassificaGlobale />
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default App
+export default App;
