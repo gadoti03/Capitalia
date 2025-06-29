@@ -7,14 +7,13 @@ import profile_icon from '../../assets/profile_icon.webp';
 
 import { Link, useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ backgroundStyle = 'transparent' }) => {
   const [sticky, setSticky] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const navigate = useNavigate();
 
-  // Funzione per estrarre il valore del cookie 'username'
   const getUsernameFromCookies = () => {
     const match = document.cookie.match(/(?:^|;\s*)username=([^;]+)/);
     return match ? decodeURIComponent(match[1]) : null;
@@ -43,7 +42,7 @@ const Navbar = () => {
 
     checkAuth();
 
-    const cookieObserver = setInterval(checkAuth, 5000); // verifica ogni 5 secondi
+    const cookieObserver = setInterval(checkAuth, 5000);
     return () => clearInterval(cookieObserver);
   }, []);
 
@@ -69,9 +68,25 @@ const Navbar = () => {
 
   const username = getUsernameFromCookies();
 
+  // Scegli il background in base a backgroundStyle e sticky
+  // Se sticky, puoi forzare un colore (es. bianco panna) oppure mantenere la scelta
+  // Qui applico backgroundStyle solo se non sticky, altrimenti bianco panna.
+  // Modifica se vuoi un comportamento diverso.
+
+  let backgroundColor = 'transparent';
+
+  if (sticky && !isOpen) {
+    backgroundColor = '#fefcf8'; // bianco panna quando sticky
+  } else {
+    backgroundColor = backgroundStyle === 'panna' ? '#fefcf8' : 'transparent';
+  }
+
   return (
     <>
-      <nav className={`container ${sticky && !isOpen ? 'dark-nav' : ''}`}>
+      <nav
+        className={`container ${sticky && !isOpen ? 'dark-nav' : ''}`}
+        style={{ backgroundColor }}
+      >
         <div className="navbar-left">
           <Link to="/">
             <img className="logo" src={logo} alt="Logo" />

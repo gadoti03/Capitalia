@@ -1,35 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const apiDbUrl = import.meta.env.VITE_API_DB_URL;
 
 const categorie = ['Cultura', 'Ristorazione', 'Ospitalità', 'Trasporto', 'Intrattenimento'];
 
-const datiMock = [
-  { capoluogo: 'Ancona', media: 4.2 },
-  { capoluogo: 'Aosta', media: 3.9 },
-  { capoluogo: 'Bari', media: 4.1 },
-  { capoluogo: 'Bologna', media: 4.5 },
-  { capoluogo: 'Cagliari', media: 4.0 },
-  { capoluogo: 'Campobasso', media: 3.8 },
-  { capoluogo: 'Catanzaro', media: 3.7 },
-  { capoluogo: 'Firenze', media: 4.6 },
-  { capoluogo: 'Genova', media: 4.0 },
-  { capoluogo: "L'Aquila", media: 3.9 },
-  { capoluogo: 'Milano', media: 4.8 },
-  { capoluogo: 'Napoli', media: 4.4 },
-  { capoluogo: 'Palermo', media: 4.2 },
-  { capoluogo: 'Perugia', media: 4.1 },
-  { capoluogo: 'Potenza', media: 3.6 },
-  { capoluogo: 'Roma', media: 4.9 },
-  { capoluogo: 'Torino', media: 4.3 },
-  { capoluogo: 'Trento', media: 4.7 },
-  { capoluogo: 'Trieste', media: 4.1 },
-  { capoluogo: 'Venezia', media: 4.4 },
-];
-
 const ClassificaGlobale = () => {
   const [categoriaSelezionata, setCategoriaSelezionata] = useState('Cultura');
+  const [servizi, setServizi] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Ordina per media decrescente
-  const datiOrdinati = [...datiMock].sort((a, b) => b.media - a.media);
+  useEffect(() => {
+    setLoading(true);
+    setError(null);
+    fetch(`${apiDbUrl}/servizi`)
+      .then(res => {
+        if (!res.ok) throw new Error('Errore nel caricamento dati');
+        return res.json();
+      })
+      .then(data => {
+        setServizi(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  // Calcola media per capoluogo filtrando per categoria selezionata
+  // Raggruppa i servizi per capoluogo, calcola media totale dai feedback di tutti i servizi del capoluogo nella categoria scelta
+  const datiPerClassifica = React.useMemo(() => {
+    if (!servizi || servizi.length === 0) return [];
+
+    // Filtra servizi per categoria (case insensitive)
+    const serviziFiltrati = servizi.filter(
+      s => s.categoria.toLowerCase() === categoriaSelezionata.toLowerCase()
+    );
+
+    // Mappa per raggruppare per capoluogo: { capoluogo: { sommaValutazioni, countValutazioni } }
+    const aggregati = {};
+
+    serviziFiltrati.forEach(s => {
+      const capoluogo = s.capoluogo;
+      const feedback = s.feedback || [];
+
+      const sommaValutazioni = feedback.reduce((acc, f) => acc + (f.valutazione || 0), 0);
+      const countValutazioni = feedback.length;
+
+      if (!aggregati[capoluogo]) {
+        aggregati[capoluogo] = { somma: 0, count: 0 };
+      }
+
+      aggregati[capoluogo].somma += sommaValutazioni;
+      aggregati[capoluogo].count += countValutazioni;
+    });
+
+    // Trasforma in array con media calcolata
+    const risultati = Object.entries(aggregati).map(([capoluogo, { somma, count }]) => ({
+      capoluogo,
+      media: count > 0 ? somma / count : 0,
+    }));
+
+    // Ordina decrescente per media
+    risultati.sort((a, b) => b.media - a.media);
+
+    return risultati;
+  }, [categoriaSelezionata, servizi]);
+
+  if (loading) return <div>Caricamento dati...</div>;
+  if (error) return <div>Errore: {error}</div>;
 
   return (
     <div
@@ -43,6 +83,7 @@ const ClassificaGlobale = () => {
         overflowY: 'auto',
       }}
     >
+      
       {/* Pulsanti categoria */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
         {categorie.map((cat) => (
@@ -82,7 +123,7 @@ const ClassificaGlobale = () => {
               style={{
                 position: 'sticky',
                 top: 0,
-                backgroundColor: '#fefcf8', // Colore pieno, identico al contenitore
+                backgroundColor: '#fefcf8',
                 zIndex: 2,
                 borderBottom: '2px solid #ddd',
               }}
@@ -93,13 +134,21 @@ const ClassificaGlobale = () => {
             </tr>
           </thead>
           <tbody>
-            {datiOrdinati.map((item, index) => (
-              <tr key={item.capoluogo} style={{ borderBottom: '1px solid #eee' }}>
-                <td style={{ padding: '8px' }}>{index + 1}</td>
-                <td style={{ padding: '8px' }}>{item.capoluogo}</td>
-                <td style={{ padding: '8px' }}>{item.media}</td>
+            {datiPerClassifica.length === 0 ? (
+              <tr>
+                <td colSpan="3" style={{ textAlign: 'center' }}>
+                  Nessun dato disponibile per questa categoria
+                </td>
               </tr>
-            ))}
+            ) : (
+              datiPerClassifica.map((item, index) => (
+                <tr key={item.capoluogo} style={{ borderBottom: '1px solid #eee' }}>
+                  <td style={{ padding: '8px' }}>{index + 1}</td>
+                  <td style={{ padding: '8px' }}>{item.capoluogo}</td>
+                  <td style={{ padding: '8px' }}>{item.media.toFixed(2)}</td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>

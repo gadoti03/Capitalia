@@ -37,8 +37,7 @@ const App = () => {
       width: '100%',
       boxSizing: 'border-box',
     }}>
-      <Navbar />
-
+    <Navbar backgroundStyle="panna" />
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
