@@ -99,18 +99,18 @@ export default function Capoluogo() {
             </nav>
 
             <h2 className="servizi-list-title">LISTA DEI SERVIZI</h2>
-
             {servizi.length === 0 ? (
               <p className="no-servizi-msg">Nessun servizio trovato in questa categoria.</p>
             ) : (
               servizi.map((servizio, idx) => (
                 <ServizioCapoluogo
-                  key={servizio._id || idx}
+                  id={servizio.id || idx}
                   nome={servizio.nome}
                   capoluogo={servizio.capoluogo}
                   collocazione={servizio.collocazione}
                   categoria={servizio.categoria}
                   lista_immagini={servizio.lista_immagini}
+                  lista_feedback={servizio.feedback}
                   username_proprietario={servizio.username_proprietario}
                 />
               ))

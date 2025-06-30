@@ -1,0 +1,44 @@
+.fsc-container {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.fsc-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fsc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.fsc-username {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.fsc-rating {
+  color: #f39c12;
+  font-size: 16px;
+}
+
+.fsc-comment {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.fsc-footer {
+  font-size: 13px;
+  color: #888;
+  display: flex;
+  gap: 10px;
+}

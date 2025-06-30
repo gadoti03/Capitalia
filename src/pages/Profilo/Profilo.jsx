@@ -207,7 +207,6 @@ class Profilo extends Component {
               </div>
             </header>
 
-            {/* 🔥 MODIFICA QUI: usiamo servizi.length */}
             <section className="profile-analytics">
               <div className="analytics-item">
                 <span className="icon-analytics">&#128227;</span>

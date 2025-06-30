@@ -115,3 +115,28 @@
   color: #888;
   text-align: center;
 }
+
+.sc-feedback-banner {
+  background-color: #f8f9fa;
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sc-feedback-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+}
+
+.sc-feedback-item {
+  border-radius: 4px;
+}
+
+.sc-banner-close {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
