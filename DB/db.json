@@ -285,6 +285,13 @@
           "data": "2025-04-16",
           "ora": "20:30",
           "username_proprietario": "daniele_c"
+        },
+        {
+          "valutazione": 2,
+          "commento": "Madonna che prezzacci---#haiuto",
+          "data": "2025-06-30",
+          "ora": "18:21",
+          "username_proprietario": "andrea_f"
         }
       ],
       "username_proprietario": "luna_m"
@@ -886,6 +893,13 @@
           "data": "2025-06-29",
           "ora": "20:33",
           "username_proprietario": "FRANCOGIOIA"
+        },
+        {
+          "valutazione": 4,
+          "commento": "Uaglio...allucinante",
+          "data": "2025-06-30",
+          "ora": "18:19",
+          "username_proprietario": "HHHHHHAIUTO"
         }
       ],
       "lista_immagini": [
@@ -1127,6 +1141,55 @@
         "https://example.com/img2.jpg"
       ],
       "username_proprietario": "0"
+    },
+    {
+      "id": "c20e",
+      "nome": "Casa Proietti",
+      "capoluogo": "Perugia",
+      "collocazione": "via Mastro Geppetto 2",
+      "categoria": "Ospitalità",
+      "feedback": [
+        {
+          "valutazione": 3,
+          "commento": "ospitali...quanto basta.",
+          "data": "2025-06-30",
+          "ora": "18:21",
+          "username_proprietario": "andrea_f"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "andrea_f"
+    },
+    {
+      "id": "fef4",
+      "nome": "Tper",
+      "capoluogo": "Bologna",
+      "collocazione": "Via Marconi 23",
+      "categoria": "Trasporto",
+      "feedback": [
+        {
+          "valutazione": 1,
+          "commento": "Prima dei lavori del tram addirittura passavano gli autobus",
+          "data": "2025-06-30",
+          "ora": "18:22",
+          "username_proprietario": "andrea_f"
+        },
+        {
+          "valutazione": 2,
+          "commento": "GRAZIE LEPORE!! SOGNAVO QUESTO MAGNIFICO DISSERVIZIO!!!",
+          "data": "2025-06-30",
+          "ora": "18:24",
+          "username_proprietario": "maria_p"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "andrea_f"
     }
   ]
 }
