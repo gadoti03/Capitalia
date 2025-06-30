@@ -1085,6 +1085,27 @@
         "https://example.com/img2.jpg"
       ],
       "username_proprietario": "provacambiotuttoahahahah"
+    },
+    {
+      "id": "d02a",
+      "nome": "ristorante Pane e Zpodda",
+      "capoluogo": "Potenza",
+      "collocazione": "via satriano di lucania, 91",
+      "categoria": "Ristorazione",
+      "feedback": [
+        {
+          "valutazione": 3,
+          "commento": "Ho mangiato pane e cipolla, fanno solo questo",
+          "data": "2025-06-30",
+          "ora": "17:58",
+          "username_proprietario": "provacambiotuttoahahahah"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "provacambiotuttoahahahah"
     }
   ]
 }
