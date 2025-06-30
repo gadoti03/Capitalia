@@ -11,7 +11,7 @@ export default function FeedbackServizioCapoluogo({
   return (
     <div className="fsc-container">
       <div className="fsc-header">
-        <span className="fsc-username">@{username_proprietario}</span>
+        <span className="fsc-username"><a href={`/profilo/${username_proprietario}`} className="fsc-username">@{username_proprietario}</a></span>
         <span className="fsc-rating">{"★".repeat(valutazione)}{"☆".repeat(5 - valutazione)}</span>
       </div>
 
