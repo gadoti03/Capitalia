@@ -1064,6 +1064,27 @@
         "https://example.com/img2.jpg"
       ],
       "username_proprietario": "provacambiotuttoahahahah"
+    },
+    {
+      "id": "3d41",
+      "nome": "Agriturismo l'ULIVETO",
+      "capoluogo": "L'Aquila",
+      "collocazione": "Pescara sud, via delle acace 5",
+      "categoria": "Ristorazione",
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Amo il prorpietario, PIETRO GIANGIULIO...IERI PER L'ONOMASTICO HA OFFERTO A TUTTI!!!",
+          "data": "2025-06-30",
+          "ora": "17:55",
+          "username_proprietario": "provacambiotuttoahahahah"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "provacambiotuttoahahahah"
     }
   ]
 }
