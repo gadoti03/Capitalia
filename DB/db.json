@@ -218,6 +218,18 @@
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "",
       "biografia": ""
+    },
+    {
+      "id": "6fb2",
+      "username": "saas",
+      "nome": "assc",
+      "cognome": "acs10151",
+      "email": "fra@gmail.com",
+      "password": "Fassacascacsacsas03",
+      "numero_servizi_pubblicati": 0,
+      "numero_servizi_eliminati": 0,
+      "url_immagine_profilo": "",
+      "biografia": ""
     }
   ],
   "servizi": [
@@ -523,7 +535,7 @@
     {
       "id": "0012",
       "nome": "Ristorante Osteria Francescana",
-      "capoluogo": "Modena",
+      "capoluogo": "Bologna",
       "collocazione": "Emilia-Romagna",
       "categoria": "RISTORAZIONE",
       "lista_immagini": [
@@ -968,6 +980,27 @@
         "/src/assets/hotelInternazionaleBologna.jpg"
       ],
       "username_proprietario": "patella"
+    },
+    {
+      "id": "6034",
+      "nome": "Trattoria Zi Ming",
+      "capoluogo": "Potenza",
+      "collocazione": "Via Siracusa 71",
+      "categoria": "Ristorazione",
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Mi frà manco na parola",
+          "data": "2025-06-30",
+          "ora": "11:27",
+          "username_proprietario": "fragabbani"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "fragabbani"
     }
   ]
 }

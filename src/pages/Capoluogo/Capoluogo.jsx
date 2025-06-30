@@ -30,8 +30,7 @@ export default function Capoluogo() {
   const [categoriaSelezionata, setCategoriaSelezionata] = useState('Cultura');
   const [servizi, setServizi] = useState([]);
 
-  const username = getCookie();
-
+  const username = getCookie('username');
   useEffect(() => {
     if (!isValidCapoluogo(citta)) {
       navigate('/');
@@ -73,7 +72,7 @@ export default function Capoluogo() {
         <section className="capoluogo-header">
           <h1 className="capoluogo-title">{citta}</h1>
 
-
+          {console.log(username)}
           {username && (
             <button className="btn-inserisci-servizio" onClick={handleInserisciServizio}>
               INSERISCI UN SERVIZIO
