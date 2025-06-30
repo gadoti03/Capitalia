@@ -134,7 +134,7 @@ export default function Servizio() {
   };
 
   const categorie = [
-    'Trasporti',
+    'Trasporto',
     'Intrattenimento',
     'Ospitalità',
     'Cultura',

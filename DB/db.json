@@ -238,7 +238,7 @@
       "nome": "Cinema Massimo",
       "capoluogo": "Torino",
       "collocazione": "Piemonte",
-      "categoria": "INTRATTENIMENTO",
+      "categoria": "Intrattenimento",
       "lista_immagini": [
         "https://example.com/cinema_massimo_1.jpg",
         "https://example.com/cinema_massimo_2.jpg"
@@ -266,7 +266,7 @@
       "nome": "Ristorante Del Cambio",
       "capoluogo": "Torino",
       "collocazione": "Piemonte",
-      "categoria": "RISTORAZIONE",
+      "categoria": "Ristorazione",
       "lista_immagini": [
         "https://example.com/ristorante_del_cambio_1.jpg",
         "https://example.com/ristorante_del_cambio_2.jpg"
@@ -294,7 +294,7 @@
       "nome": "GTT - Servizi Taxi",
       "capoluogo": "Torino",
       "collocazione": "Piemonte",
-      "categoria": "TRASPORTI",
+      "categoria": "Trasporto",
       "lista_immagini": [
         "https://example.com/gtt_taxi_1.jpg"
       ],
@@ -321,7 +321,7 @@
       "nome": "Museo Egizio Torino",
       "capoluogo": "Torino",
       "collocazione": "Piemonte",
-      "categoria": "CULTURA",
+      "categoria": "Cultura",
       "lista_immagini": [
         "https://example.com/museo_egizio_1.jpg",
         "https://example.com/museo_egizio_2.jpg"
@@ -356,7 +356,7 @@
       "nome": "Hotel Principi di Piemonte",
       "capoluogo": "Torino",
       "collocazione": "Piemonte",
-      "categoria": "OSPITALITÀ",
+      "categoria": "Ospitalità",
       "lista_immagini": [
         "https://example.com/hotel_principi_1.jpg",
         "https://example.com/hotel_principi_2.jpg"
@@ -384,7 +384,7 @@
       "nome": "Teatro alla Scala",
       "capoluogo": "Milano",
       "collocazione": "Lombardia",
-      "categoria": "INTRATTENIMENTO",
+      "categoria": "Intrattenimento",
       "lista_immagini": [
         "https://example.com/scala_1.jpg",
         "https://example.com/scala_2.jpg"
@@ -412,7 +412,7 @@
       "nome": "Ristorante Cracco",
       "capoluogo": "Milano",
       "collocazione": "Lombardia",
-      "categoria": "RISTORAZIONE",
+      "categoria": "Ristorazione",
       "lista_immagini": [
         "https://example.com/cracco_1.jpg",
         "https://example.com/cracco_2.jpg"
@@ -440,7 +440,7 @@
       "nome": "ATM Milano - Metropolitana",
       "capoluogo": "Milano",
       "collocazione": "Lombardia",
-      "categoria": "TRASPORTI",
+      "categoria": "Trasporto",
       "lista_immagini": [
         "https://example.com/atm_milano_1.jpg"
       ],
@@ -467,7 +467,7 @@
       "nome": "Pinacoteca di Brera",
       "capoluogo": "Milano",
       "collocazione": "Lombardia",
-      "categoria": "CULTURA",
+      "categoria": "Cultura",
       "lista_immagini": [
         "https://example.com/brera_1.jpg",
         "https://example.com/brera_2.jpg"
@@ -516,7 +516,7 @@
       "nome": "Hotel Magna Pars Suites",
       "capoluogo": "Milano",
       "collocazione": "Lombardia",
-      "categoria": "OSPITALITÀ",
+      "categoria": "Ospitalità",
       "lista_immagini": [
         "https://example.com/magna_pars_1.jpg",
         "https://example.com/magna_pars_2.jpg"
@@ -544,7 +544,7 @@
       "nome": "Teatro Regio di Torino",
       "capoluogo": "Torino",
       "collocazione": "Piemonte",
-      "categoria": "INTRATTENIMENTO",
+      "categoria": "Intrattenimento",
       "lista_immagini": [
         "https://example.com/teatro_regio_1.jpg",
         "https://example.com/teatro_regio_2.jpg"
@@ -586,7 +586,7 @@
       "nome": "Trenitalia - Stazione Centrale",
       "capoluogo": "Milano",
       "collocazione": "Lombardia",
-      "categoria": "TRASPORTI",
+      "categoria": "Trasporto",
       "lista_immagini": [
         "https://example.com/trenitalia_milano_1.jpg"
       ],
@@ -606,7 +606,7 @@
       "nome": "Museo Nazionale del Cinema",
       "capoluogo": "Torino",
       "collocazione": "Piemonte",
-      "categoria": "CULTURA",
+      "categoria": "Cultura",
       "lista_immagini": [
         "https://example.com/museo_cinema_1.jpg",
         "https://example.com/museo_cinema_2.jpg"
@@ -627,7 +627,7 @@
       "nome": "Hotel Daniel",
       "capoluogo": "Firenze",
       "collocazione": "Toscana",
-      "categoria": "OSPITALITÀ",
+      "categoria": "Ospitalità",
       "lista_immagini": [
         "https://example.com/hotel_daniel_1.jpg",
         "https://example.com/hotel_daniel_2.jpg"
@@ -648,7 +648,7 @@
       "nome": "Teatro Verdi",
       "capoluogo": "Firenze",
       "collocazione": "Toscana",
-      "categoria": "INTRATTENIMENTO",
+      "categoria": "Intrattenimento",
       "lista_immagini": [
         "https://example.com/teatro_verdi_1.jpg",
         "https://example.com/teatro_verdi_2.jpg"
@@ -669,7 +669,7 @@
       "nome": "Ristorante Enoteca Pinchiorri",
       "capoluogo": "Firenze",
       "collocazione": "Toscana",
-      "categoria": "RISTORAZIONE",
+      "categoria": "Ristorazione",
       "lista_immagini": [
         "https://example.com/enoteca_pinchiorri_1.jpg",
         "https://example.com/enoteca_pinchiorri_2.jpg"
@@ -690,7 +690,7 @@
       "nome": "ATAF - Trasporto Pubblico",
       "capoluogo": "Firenze",
       "collocazione": "Toscana",
-      "categoria": "TRASPORTI",
+      "categoria": "Trasporto",
       "lista_immagini": [
         "https://example.com/ataf_1.jpg"
       ],
@@ -710,7 +710,7 @@
       "nome": "Galleria degli Uffizi",
       "capoluogo": "Firenze",
       "collocazione": "Toscana",
-      "categoria": "CULTURA",
+      "categoria": "Cultura",
       "lista_immagini": [
         "https://example.com/uffizi_1.jpg",
         "https://example.com/uffizi_2.jpg"
@@ -1043,6 +1043,27 @@
         "https://example.com/img2.jpg"
       ],
       "username_proprietario": "fragabbani"
+    },
+    {
+      "id": "04e1",
+      "nome": "Trenitalia",
+      "capoluogo": "Potenza",
+      "collocazione": "Ferrovia potenza",
+      "categoria": "Trasporto",
+      "feedback": [
+        {
+          "valutazione": 1,
+          "commento": "FrecciaRossa in manutenzione. Treno regionale più lento delle pecore che pascolano sulla strada.",
+          "data": "2025-06-30",
+          "ora": "17:43",
+          "username_proprietario": "provacambiotuttoahahahah"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "provacambiotuttoahahahah"
     }
   ]
 }
