@@ -58,7 +58,7 @@ export default function Capoluogo() {
     };
 
     fetchServizi();
-  }, [categoriaSelezionata]);
+  }, [categoriaSelezionata, servizi]);
 
   const handleInserisciServizio = () => {
     navigate(`/servizio/${citta}`);

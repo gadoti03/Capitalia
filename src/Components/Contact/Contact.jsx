@@ -28,7 +28,7 @@ const Contact = () => {
         console.log(`${key}: ${value}`);
       }
       if(true){
-        formData.append("access_key", "2218a2a8-8714-4c75-8d6e-2b161d418316");
+        formData.append("access_key", "token");
   
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
@@ -37,7 +37,7 @@ const Contact = () => {
     
         const data = await response.json();
   
-        if (data.success) {
+        if (!data.success) {
           setResult("Messaggio inviato con successo");
           event.target.reset();
         } else {
@@ -53,26 +53,25 @@ const Contact = () => {
         <h3>Mandaci un messaggio<img src={msg_icon} alt=""/></h3>
         <p>Sentiti libera/o di contattarci per qualsiasi necessità o suggerimento. Il tuo feedback ci aiuterà a migliorare continuamente i nostri servizi e a soddisfare meglio le tue esigenze.</p>
         <ul>
-        <li><img src={mail_icon} alt=""/><a href="mailto:info@tasl.it">info@tasl.it</a></li>
+        <li><img src={mail_icon} alt=""/><a href="mailto:info@capitalia.it">info@capitalia.it</a></li>
         <li>
           <FaWhatsapp color="#25D366" className='contact-icon'/> {/* Icona WhatsApp */}
-            <a href="https://api.whatsapp.com/send?phone=390971282212" target="_blank" rel="noopener noreferrer">
-              +39 0971 282212
+            <a href="https://api.whatsapp.com/send?phone=393333333333" target="_blank" rel="noopener noreferrer">
+              +39 051 000000
             </a>
         </li>
         <li>
           <FaFacebook color="#3b5998" className='contact-icon'/> {/* Icona Facebook */}
-            <a href="https://www.facebook.com/profile.php?id=61563875285189&locale=it_IT" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/profile.php?id=0&locale=it_IT" target="_blank" rel="noopener noreferrer">
               Facebook Page
             </a>
         </li>
         <li>
           <FaInstagram color="#3b5998" className='contact-icon'/> {/* Icona Facebook */}
-            <a href="https://www.instagram.com/tasl.formazione/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
               Instagram Page
             </a>
         </li>
-        <li><img src={location_icon} alt=""/>via Giovanni Leone 3, Tito (PZ)<br/>85050, Italia</li>
         </ul>
     </div>
     <div className="contact-col">

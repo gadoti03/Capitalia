@@ -140,3 +140,68 @@
   cursor: pointer;
   padding: 0.5rem 0;
 }
+
+.sc-feedback-form {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.sc-stars-input {
+  display: flex;
+  gap: 8px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+.sc-star {
+  color: #ccc;
+  transition: color 0.2s ease;
+}
+
+.sc-star.filled {
+  color: #f7c200;
+}
+
+.sc-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  background-color: #fff;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease;
+  margin-bottom: 14px;
+}
+
+.sc-textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.sc-submit-btn {
+  padding: 10px 20px;
+  background-color: #0a58181b; /* colore sfondo leggero verde trasparente */
+  color: #052e0e; /* colore testo verde scuro */
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(10, 88, 24, 0.2); /* ombra leggera verde */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+}
+
+.sc-submit-btn:hover {
+  background-color: #052e0e; /* verde scuro pieno */
+  color: white;
+  box-shadow: 0 4px 12px rgba(5, 46, 14, 0.6);
+}
+
+.sc-submit-btn:active {
+  transform: scale(0.97);
+}

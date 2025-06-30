@@ -171,7 +171,7 @@
     },
     {
       "id": "5555",
-      "username": "0",
+      "username": "provacambiotuttoahahahah",
       "nome": "Francesco",
       "cognome": "Gabbani",
       "email": "fragabbani@gmail.com",
@@ -179,7 +179,7 @@
       "numero_servizi_pubblicati": 0,
       "numero_servizi_eliminati": 0,
       "url_immagine_profilo": "/src/assets/gabbani.png",
-      "biografia": "Lasciate ogni speranza voi che entrate...ESTATE!!!",
+      "biografia": "hhhhhaaaaaaiuto",
       "admin": true
     },
     {
@@ -479,6 +479,27 @@
           "data": "2025-03-22",
           "ora": "15:30",
           "username_proprietario": "svolgo92"
+        },
+        {
+          "valutazione": 5,
+          "commento": "Che figata",
+          "data": "2025-06-30",
+          "ora": "17:15",
+          "username_proprietario": "provacambiotuttoahahahah"
+        },
+        {
+          "valutazione": 5,
+          "commento": "HO amato questo concerto",
+          "data": "2025-06-30",
+          "ora": "17:20",
+          "username_proprietario": "provacambiotuttoahahahah"
+        },
+        {
+          "valutazione": 5,
+          "commento": "Giuro...ADORO!",
+          "data": "2025-06-30",
+          "ora": "17:22",
+          "username_proprietario": "provacambiotuttoahahahah"
         }
       ],
       "username_proprietario": "simona_r"
@@ -731,6 +752,13 @@
           "data": "2025-06-29",
           "ora": "20:21",
           "username_proprietario": "fragabbani"
+        },
+        {
+          "valutazione": 4,
+          "commento": "vABBE!!! CHESPETTACOLO....!!!!!!!!!!!!!!!",
+          "data": "2025-06-30",
+          "ora": "17:23",
+          "username_proprietario": "provacambiotuttoahahahah"
         }
       ],
       "lista_immagini": [

@@ -102,6 +102,62 @@ class Profilo extends Component {
     this.fetchDati();
   };
 
+  aggiornaUsernameNeiServiziVecchioNuovo = async(oldUsername, newUsername) => {
+    const apiDbUrl = import.meta.env.VITE_API_DB_URL;
+
+    try {
+      // Prendi tutti i servizi
+      const res = await fetch(`${apiDbUrl}/servizi`);
+      if (!res.ok) throw new Error('Errore nel fetch servizi');
+      const servizi = await res.json();
+
+      // Filtra solo i servizi che hanno username proprietario uguale al vecchio username
+      // oppure che hanno feedback con vecchio username_proprietario
+      const serviziDaAggiornare = servizi.filter(servizio => {
+        if (servizio.username_proprietario === oldUsername) return true;
+        if (servizio.feedback && servizio.feedback.some(fb => fb.username_proprietario === oldUsername)) return true;
+        return false;
+      });
+
+      // Per ogni servizio da aggiornare, crea nuova versione con username aggiornato
+      for (const servizio of serviziDaAggiornare) {
+        let changed = false;
+
+        // Aggiorna username proprietario del servizio
+        if (servizio.username_proprietario === oldUsername) {
+          servizio.username_proprietario = newUsername;
+          changed = true;
+        }
+
+        // Aggiorna username proprietario nei feedback
+        if (servizio.feedback) {
+          servizio.feedback = servizio.feedback.map(fb => {
+            if (fb.username_proprietario === oldUsername) {
+              changed = true;
+              return { ...fb, username_proprietario: newUsername };
+            }
+            return fb;
+          });
+        }
+
+        if (changed) {
+          // PUT aggiornamento servizio
+          const resPut = await fetch(`${apiDbUrl}/servizi/${servizio.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(servizio),
+          });
+          if (!resPut.ok) {
+            console.error(`Errore aggiornando servizio ${servizio.id}: ${resPut.status}`);
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Errore aggiornando username nei servizi:', error);
+    }
+  }
+
+
   handleSaveChanges = async (updatedData) => {
     const { profilo } = this.state;
     const { navigate } = this.props;
@@ -147,7 +203,12 @@ class Profilo extends Component {
         showModificaBanner: false
       });
 
+      // Se l'username è cambiato, aggiorna anche username nei servizi e feedback
       if (updatedData.username && updatedData.username !== profilo.username) {
+        // Chiama la funzione aggiornaUsernameNeiServiziVecchioNuovo
+        await this.aggiornaUsernameNeiServiziVecchioNuovo(profilo.username, updatedData.username);
+
+        // Naviga verso il nuovo profilo
         navigate(`/profilo/${updatedData.username}`);
       }
 
@@ -207,6 +268,7 @@ class Profilo extends Component {
               </div>
             </header>
 
+            {/* 🔥 MODIFICA QUI: usiamo servizi.length */}
             <section className="profile-analytics">
               <div className="analytics-item">
                 <span className="icon-analytics">&#128227;</span>
