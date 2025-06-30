@@ -1106,6 +1106,27 @@
         "https://example.com/img2.jpg"
       ],
       "username_proprietario": "provacambiotuttoahahahah"
+    },
+    {
+      "id": "0447",
+      "nome": "Agostino Gerardi in Concerto",
+      "capoluogo": "Potenza",
+      "collocazione": "via Sopa putenza, 45",
+      "categoria": "Intrattenimento",
+      "feedback": [
+        {
+          "valutazione": 5,
+          "commento": "Cri cri cri\nNenna mia si vuoi minì\nAgli lagh’ r’ sant’ Vit’\n‘ngurci n’gurci a lu cannit’\nQua qua qua\nNenna mia nun’ ti scustà\nCor’ a cor’ man’ a man’\nCum’ ni facim’ stà\n",
+          "data": "2025-06-30",
+          "ora": "18:11",
+          "username_proprietario": "0"
+        }
+      ],
+      "lista_immagini": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg"
+      ],
+      "username_proprietario": "0"
     }
   ]
 }
