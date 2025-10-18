@@ -28,7 +28,7 @@ The system is designed as a client–server architecture:
    Open a terminal in the backend folder and run:
 
    ```bash
-   python app.py
+   python -m http.server 3001
    ```
 
    This will start the Python server and open the database connection on port `3001`.
