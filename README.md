@@ -28,7 +28,7 @@ The system is designed as a client–server architecture:
    Open a terminal in the backend folder and run:
 
    ```bash
-   python -m http.server 3001
+   json-server --watch db.json --port 3001
    ```
 
    This will start the Python server and open the database connection on port `3001`.
