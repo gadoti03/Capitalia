@@ -31,7 +31,7 @@ The system is designed as a client–server architecture:
    json-server --watch db.json --port 3001
    ```
 
-   This will start the Python server and open the database connection on port `3001`.
+   This will start the JSON server and open the database connection on port `3001`.
 
 2. **Start the frontend**
 
