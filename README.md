@@ -1,8 +1,62 @@
-# React + Vite
+# Capitalia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Capitalia is a web platform developed as part of a Software Engineering project.  
+It consists of a Python backend that manages the database and exposes an API, and a React frontend that provides the user interface.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The system is designed as a client–server architecture:
+
+- The **backend** is written in Python and acts as the data layer.  
+  It handles connections to the database, authentication, and API endpoints.  
+  The backend runs on **port 3001**.
+
+- The **frontend** is a React application.  
+  It communicates with the backend via HTTP requests to the exposed API.  
+  The frontend is started separately and runs on its own development server (for example, Vite or Create React App).
+
+```
+[React Frontend]  →  http://localhost:5173
+      ↓ REST API
+[Python Backend + Database]  →  http://localhost:3001
+```
+
+## How to Run the Project
+
+1. **Start the backend**
+
+   Open a terminal in the backend folder and run:
+
+   ```bash
+   python app.py
+   ```
+
+   This will start the Python server and open the database connection on port `3001`.
+
+2. **Start the frontend**
+
+   In another terminal, move to the React project directory and run:
+
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+   The React application will start on its development port (usually `5173`).
+
+3. **Access the application**
+
+   Open your browser and visit:
+
+   ```
+   http://localhost:5173
+   ```
+
+   The frontend will automatically communicate with the backend through the API on port `3001`.
+
+## Summary
+
+- Python backend exposes the database and API on **port 3001**  
+- React frontend runs as a separate client application  
+- Communication happens through HTTP requests between React and Python servers  
+- Both components must be running simultaneously for the full system to work
