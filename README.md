@@ -56,7 +56,7 @@ The system is designed as a client–server architecture:
 
 ## Summary
 
-- Python backend exposes the database and API on **port 3001**  
+- JSON sevrer backend exposes the database and API on **port 3001**  
 - React frontend runs as a separate client application  
 - Communication happens through HTTP requests between React and Python servers  
 - Both components must be running simultaneously for the full system to work
